@@ -1,0 +1,3050 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quest Forge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* ---------------------------------------------------------------
+   Theme palettes below are daisyUI's 35 built-in themes, inlined.
+   daisyUI 5.7.28 — MIT License — https://daisyui.com
+   Only the palettes are used; none of daisyUI's component CSS.
+   --------------------------------------------------------------- */
+/*! 🌼 daisyUI 5.7.28 - MIT License */
+:root{color-scheme:light;--color-base-100:oklch(100% 0 0);--color-base-200:oklch(98% 0 0);--color-base-300:oklch(95% 0 0);--color-base-content:oklch(21% .006 285.885);--color-primary:oklch(45% .24 277.023);--color-primary-content:oklch(93% .034 272.788);--color-secondary:oklch(65% .241 354.308);--color-secondary-content:oklch(94% .028 342.258);--color-accent:oklch(77% .152 181.912);--color-accent-content:oklch(38% .063 188.416);--color-neutral:oklch(14% .005 285.823);--color-neutral-content:oklch(92% .004 286.32);--color-info:oklch(74% .16 232.661);--color-info-content:oklch(29% .066 243.157);--color-success:oklch(76% .177 163.223);--color-success-content:oklch(37% .077 168.94);--color-warning:oklch(82% .189 84.429);--color-warning-content:oklch(41% .112 45.904);--color-error:oklch(71% .194 13.428);--color-error-content:oklch(27% .105 12.094);--radius-selector:.5rem;--radius-field:.25rem;--radius-box:.5rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:1;--noise:0}
+@media (prefers-color-scheme:dark){:root:not([data-theme]){color-scheme:dark;--color-base-100:oklch(25.33% .016 252.42);--color-base-200:oklch(23.26% .014 253.1);--color-base-300:oklch(21.15% .012 254.09);--color-base-content:oklch(97.807% .029 256.847);--color-primary:oklch(58% .233 277.117);--color-primary-content:oklch(96% .018 272.314);--color-secondary:oklch(65% .241 354.308);--color-secondary-content:oklch(94% .028 342.258);--color-accent:oklch(77% .152 181.912);--color-accent-content:oklch(38% .063 188.416);--color-neutral:oklch(14% .005 285.823);--color-neutral-content:oklch(92% .004 286.32);--color-info:oklch(74% .16 232.661);--color-info-content:oklch(29% .066 243.157);--color-success:oklch(76% .177 163.223);--color-success-content:oklch(37% .077 168.94);--color-warning:oklch(82% .189 84.429);--color-warning-content:oklch(41% .112 45.904);--color-error:oklch(71% .194 13.428);--color-error-content:oklch(27% .105 12.094);--radius-selector:.5rem;--radius-field:.25rem;--radius-box:.5rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:1;--noise:0}}
+[data-theme=light]{color-scheme:light;--color-base-100:oklch(100% 0 0);--color-base-200:oklch(98% 0 0);--color-base-300:oklch(95% 0 0);--color-base-content:oklch(21% .006 285.885);--color-primary:oklch(45% .24 277.023);--color-primary-content:oklch(93% .034 272.788);--color-secondary:oklch(65% .241 354.308);--color-secondary-content:oklch(94% .028 342.258);--color-accent:oklch(77% .152 181.912);--color-accent-content:oklch(38% .063 188.416);--color-neutral:oklch(14% .005 285.823);--color-neutral-content:oklch(92% .004 286.32);--color-info:oklch(74% .16 232.661);--color-info-content:oklch(29% .066 243.157);--color-success:oklch(76% .177 163.223);--color-success-content:oklch(37% .077 168.94);--color-warning:oklch(82% .189 84.429);--color-warning-content:oklch(41% .112 45.904);--color-error:oklch(71% .194 13.428);--color-error-content:oklch(27% .105 12.094);--radius-selector:.5rem;--radius-field:.25rem;--radius-box:.5rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:1;--noise:0}
+[data-theme=dark]{color-scheme:dark;--color-base-100:oklch(25.33% .016 252.42);--color-base-200:oklch(23.26% .014 253.1);--color-base-300:oklch(21.15% .012 254.09);--color-base-content:oklch(97.807% .029 256.847);--color-primary:oklch(58% .233 277.117);--color-primary-content:oklch(96% .018 272.314);--color-secondary:oklch(65% .241 354.308);--color-secondary-content:oklch(94% .028 342.258);--color-accent:oklch(77% .152 181.912);--color-accent-content:oklch(38% .063 188.416);--color-neutral:oklch(14% .005 285.823);--color-neutral-content:oklch(92% .004 286.32);--color-info:oklch(74% .16 232.661);--color-info-content:oklch(29% .066 243.157);--color-success:oklch(76% .177 163.223);--color-success-content:oklch(37% .077 168.94);--color-warning:oklch(82% .189 84.429);--color-warning-content:oklch(41% .112 45.904);--color-error:oklch(71% .194 13.428);--color-error-content:oklch(27% .105 12.094);--radius-selector:.5rem;--radius-field:.25rem;--radius-box:.5rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:1;--noise:0}
+[data-theme=cupcake]{color-scheme:light;--color-base-100:oklch(97.788% .004 56.375);--color-base-200:oklch(93.982% .007 61.449);--color-base-300:oklch(91.586% .006 53.44);--color-base-content:oklch(23.574% .066 313.189);--color-primary:oklch(85% .138 181.071);--color-primary-content:oklch(43% .078 188.216);--color-secondary:oklch(89% .061 343.231);--color-secondary-content:oklch(45% .187 3.815);--color-accent:oklch(90% .076 70.697);--color-accent-content:oklch(47% .157 37.304);--color-neutral:oklch(27% .006 286.033);--color-neutral-content:oklch(92% .004 286.32);--color-info:oklch(68% .169 237.323);--color-info-content:oklch(29% .066 243.157);--color-success:oklch(69% .17 162.48);--color-success-content:oklch(26% .051 172.552);--color-warning:oklch(79% .184 86.047);--color-warning-content:oklch(28% .066 53.813);--color-error:oklch(64% .246 16.439);--color-error-content:oklch(27% .105 12.094);--radius-selector:1rem;--radius-field:2rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:2px;--depth:1;--noise:0}
+[data-theme=bumblebee]{color-scheme:light;--color-base-100:oklch(100% 0 0);--color-base-200:oklch(97% 0 0);--color-base-300:oklch(92% 0 0);--color-base-content:oklch(20% 0 0);--color-primary:oklch(85% .199 91.936);--color-primary-content:oklch(42% .095 57.708);--color-secondary:oklch(75% .183 55.934);--color-secondary-content:oklch(40% .123 38.172);--color-accent:oklch(0% 0 0);--color-accent-content:oklch(100% 0 0);--color-neutral:oklch(37% .01 67.558);--color-neutral-content:oklch(92% .003 48.717);--color-info:oklch(74% .16 232.661);--color-info-content:oklch(39% .09 240.876);--color-success:oklch(76% .177 163.223);--color-success-content:oklch(37% .077 168.94);--color-warning:oklch(82% .189 84.429);--color-warning-content:oklch(41% .112 45.904);--color-error:oklch(70% .191 22.216);--color-error-content:oklch(39% .141 25.723);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:1;--noise:0}
+[data-theme=emerald]{color-scheme:light;--color-base-100:oklch(100% 0 0);--color-base-200:oklch(93% 0 0);--color-base-300:oklch(86% 0 0);--color-base-content:oklch(35.519% .032 262.988);--color-primary:oklch(76.662% .135 153.45);--color-primary-content:oklch(33.387% .04 162.24);--color-secondary:oklch(61.302% .202 261.294);--color-secondary-content:oklch(100% 0 0);--color-accent:oklch(72.772% .149 33.2);--color-accent-content:oklch(0% 0 0);--color-neutral:oklch(35.519% .032 262.988);--color-neutral-content:oklch(98.462% .001 247.838);--color-info:oklch(72.06% .191 231.6);--color-info-content:oklch(0% 0 0);--color-success:oklch(64.8% .15 160);--color-success-content:oklch(0% 0 0);--color-warning:oklch(84.71% .199 83.87);--color-warning-content:oklch(0% 0 0);--color-error:oklch(71.76% .221 22.18);--color-error-content:oklch(0% 0 0);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=corporate]{color-scheme:light;--color-base-100:oklch(100% 0 0);--color-base-200:oklch(93% 0 0);--color-base-300:oklch(86% 0 0);--color-base-content:oklch(22.389% .031 278.072);--color-primary:oklch(58% .158 241.966);--color-primary-content:oklch(100% 0 0);--color-secondary:oklch(55% .046 257.417);--color-secondary-content:oklch(100% 0 0);--color-accent:oklch(60% .118 184.704);--color-accent-content:oklch(100% 0 0);--color-neutral:oklch(0% 0 0);--color-neutral-content:oklch(100% 0 0);--color-info:oklch(60% .126 221.723);--color-info-content:oklch(100% 0 0);--color-success:oklch(62% .194 149.214);--color-success-content:oklch(100% 0 0);--color-warning:oklch(85% .199 91.936);--color-warning-content:oklch(0% 0 0);--color-error:oklch(70% .191 22.216);--color-error-content:oklch(0% 0 0);--radius-selector:.25rem;--radius-field:.25rem;--radius-box:.25rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=synthwave]{color-scheme:dark;--color-base-100:oklch(15% .09 281.288);--color-base-200:oklch(20% .09 281.288);--color-base-300:oklch(25% .09 281.288);--color-base-content:oklch(78% .115 274.713);--color-primary:oklch(71% .202 349.761);--color-primary-content:oklch(28% .109 3.907);--color-secondary:oklch(82% .111 230.318);--color-secondary-content:oklch(29% .066 243.157);--color-accent:oklch(75% .183 55.934);--color-accent-content:oklch(26% .079 36.259);--color-neutral:oklch(45% .24 277.023);--color-neutral-content:oklch(87% .065 274.039);--color-info:oklch(74% .16 232.661);--color-info-content:oklch(29% .066 243.157);--color-success:oklch(77% .152 181.912);--color-success-content:oklch(27% .046 192.524);--color-warning:oklch(90% .182 98.111);--color-warning-content:oklch(42% .095 57.708);--color-error:oklch(73.7% .121 32.639);--color-error-content:oklch(23.501% .096 290.329);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=retro]{color-scheme:light;--color-base-100:oklch(91.637% .034 90.515);--color-base-200:oklch(88.272% .049 91.774);--color-base-300:oklch(84.133% .065 90.856);--color-base-content:oklch(41% .112 45.904);--color-primary:oklch(80% .114 19.571);--color-primary-content:oklch(39% .141 25.723);--color-secondary:oklch(92% .084 155.995);--color-secondary-content:oklch(44% .119 151.328);--color-accent:oklch(68% .162 75.834);--color-accent-content:oklch(41% .112 45.904);--color-neutral:oklch(44% .011 73.639);--color-neutral-content:oklch(86% .005 56.366);--color-info:oklch(58% .158 241.966);--color-info-content:oklch(96% .059 95.617);--color-success:oklch(51% .096 186.391);--color-success-content:oklch(96% .059 95.617);--color-warning:oklch(64% .222 41.116);--color-warning-content:oklch(96% .059 95.617);--color-error:oklch(70% .191 22.216);--color-error-content:oklch(40% .123 38.172);--radius-selector:.25rem;--radius-field:.25rem;--radius-box:.5rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=cyberpunk]{color-scheme:light;--color-base-100:oklch(94.51% .179 104.32);--color-base-200:oklch(91.51% .179 104.32);--color-base-300:oklch(85.51% .179 104.32);--color-base-content:oklch(0% 0 0);--color-primary:oklch(74.22% .209 6.35);--color-primary-content:oklch(14.844% .041 6.35);--color-secondary:oklch(83.33% .184 204.72);--color-secondary-content:oklch(16.666% .036 204.72);--color-accent:oklch(71.86% .217 310.43);--color-accent-content:oklch(14.372% .043 310.43);--color-neutral:oklch(23.04% .065 269.31);--color-neutral-content:oklch(94.51% .179 104.32);--color-info:oklch(72.06% .191 231.6);--color-info-content:oklch(0% 0 0);--color-success:oklch(64.8% .15 160);--color-success-content:oklch(0% 0 0);--color-warning:oklch(84.71% .199 83.87);--color-warning-content:oklch(0% 0 0);--color-error:oklch(71.76% .221 22.18);--color-error-content:oklch(0% 0 0);--radius-selector:0rem;--radius-field:0rem;--radius-box:0rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=valentine]{color-scheme:light;--color-base-100:oklch(97% .014 343.198);--color-base-200:oklch(94% .028 342.258);--color-base-300:oklch(89% .061 343.231);--color-base-content:oklch(52% .223 3.958);--color-primary:oklch(65% .241 354.308);--color-primary-content:oklch(100% 0 0);--color-secondary:oklch(62% .265 303.9);--color-secondary-content:oklch(97% .014 308.299);--color-accent:oklch(82% .111 230.318);--color-accent-content:oklch(39% .09 240.876);--color-neutral:oklch(40% .153 2.432);--color-neutral-content:oklch(89% .061 343.231);--color-info:oklch(86% .127 207.078);--color-info-content:oklch(44% .11 240.79);--color-success:oklch(84% .143 164.978);--color-success-content:oklch(43% .095 166.913);--color-warning:oklch(75% .183 55.934);--color-warning-content:oklch(26% .079 36.259);--color-error:oklch(63% .237 25.331);--color-error-content:oklch(97% .013 17.38);--radius-selector:1rem;--radius-field:2rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=halloween]{color-scheme:dark;--color-base-100:oklch(21% .006 56.043);--color-base-200:oklch(14% .004 49.25);--color-base-300:oklch(0% 0 0);--color-base-content:oklch(84.955% 0 0);--color-primary:oklch(77.48% .204 60.62);--color-primary-content:oklch(19.693% .004 196.779);--color-secondary:oklch(45.98% .248 305.03);--color-secondary-content:oklch(89.196% .049 305.03);--color-accent:oklch(64.8% .223 136.073);--color-accent-content:oklch(0% 0 0);--color-neutral:oklch(24.371% .046 65.681);--color-neutral-content:oklch(84.874% .009 65.681);--color-info:oklch(54.615% .215 262.88);--color-info-content:oklch(90.923% .043 262.88);--color-success:oklch(62.705% .169 149.213);--color-success-content:oklch(12.541% .033 149.213);--color-warning:oklch(66.584% .157 58.318);--color-warning-content:oklch(13.316% .031 58.318);--color-error:oklch(65.72% .199 27.33);--color-error-content:oklch(13.144% .039 27.33);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:1;--noise:0}
+[data-theme=garden]{color-scheme:light;--color-base-100:oklch(92.951% .002 17.197);--color-base-200:oklch(86.445% .002 17.197);--color-base-300:oklch(79.938% .001 17.197);--color-base-content:oklch(16.961% .001 17.32);--color-primary:oklch(62.45% .278 3.836);--color-primary-content:oklch(100% 0 0);--color-secondary:oklch(48.495% .11 355.095);--color-secondary-content:oklch(89.699% .022 355.095);--color-accent:oklch(56.273% .054 154.39);--color-accent-content:oklch(100% 0 0);--color-neutral:oklch(24.155% .049 89.07);--color-neutral-content:oklch(92.951% .002 17.197);--color-info:oklch(72.06% .191 231.6);--color-info-content:oklch(0% 0 0);--color-success:oklch(64.8% .15 160);--color-success-content:oklch(0% 0 0);--color-warning:oklch(84.71% .199 83.87);--color-warning-content:oklch(0% 0 0);--color-error:oklch(71.76% .221 22.18);--color-error-content:oklch(0% 0 0);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=forest]{color-scheme:dark;--color-base-100:oklch(20.84% .008 17.911);--color-base-200:oklch(18.522% .007 17.911);--color-base-300:oklch(16.203% .007 17.911);--color-base-content:oklch(83.768% .001 17.911);--color-primary:oklch(68.628% .185 148.958);--color-primary-content:oklch(0% 0 0);--color-secondary:oklch(69.776% .135 168.327);--color-secondary-content:oklch(13.955% .027 168.327);--color-accent:oklch(70.628% .119 185.713);--color-accent-content:oklch(14.125% .023 185.713);--color-neutral:oklch(30.698% .039 171.364);--color-neutral-content:oklch(86.139% .007 171.364);--color-info:oklch(72.06% .191 231.6);--color-info-content:oklch(0% 0 0);--color-success:oklch(64.8% .15 160);--color-success-content:oklch(0% 0 0);--color-warning:oklch(84.71% .199 83.87);--color-warning-content:oklch(0% 0 0);--color-error:oklch(71.76% .221 22.18);--color-error-content:oklch(0% 0 0);--radius-selector:1rem;--radius-field:2rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=aqua]{color-scheme:dark;--color-base-100:oklch(37% .146 265.522);--color-base-200:oklch(28% .091 267.935);--color-base-300:oklch(22% .091 267.935);--color-base-content:oklch(90% .058 230.902);--color-primary:oklch(85.661% .144 198.645);--color-primary-content:oklch(40.124% .068 197.603);--color-secondary:oklch(60.682% .108 309.782);--color-secondary-content:oklch(96% .016 293.756);--color-accent:oklch(93.426% .102 94.555);--color-accent-content:oklch(18.685% .02 94.555);--color-neutral:oklch(27% .146 265.522);--color-neutral-content:oklch(80% .146 265.522);--color-info:oklch(54.615% .215 262.88);--color-info-content:oklch(90.923% .043 262.88);--color-success:oklch(62.705% .169 149.213);--color-success-content:oklch(12.541% .033 149.213);--color-warning:oklch(66.584% .157 58.318);--color-warning-content:oklch(27% .077 45.635);--color-error:oklch(73.95% .19 27.33);--color-error-content:oklch(14.79% .038 27.33);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:1;--noise:0}
+[data-theme=lofi]{color-scheme:light;--color-base-100:oklch(100% 0 0);--color-base-200:oklch(97% 0 0);--color-base-300:oklch(94% 0 0);--color-base-content:oklch(0% 0 0);--color-primary:oklch(15.906% 0 0);--color-primary-content:oklch(100% 0 0);--color-secondary:oklch(21.455% .001 17.278);--color-secondary-content:oklch(100% 0 0);--color-accent:oklch(26.861% 0 0);--color-accent-content:oklch(100% 0 0);--color-neutral:oklch(0% 0 0);--color-neutral-content:oklch(100% 0 0);--color-info:oklch(79.54% .103 205.9);--color-info-content:oklch(15.908% .02 205.9);--color-success:oklch(90.13% .153 164.14);--color-success-content:oklch(18.026% .03 164.14);--color-warning:oklch(88.37% .135 79.94);--color-warning-content:oklch(17.674% .027 79.94);--color-error:oklch(78.66% .15 28.47);--color-error-content:oklch(15.732% .03 28.47);--radius-selector:2rem;--radius-field:.25rem;--radius-box:.5rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=pastel]{color-scheme:light;--color-base-100:oklch(100% 0 0);--color-base-200:oklch(98.462% .001 247.838);--color-base-300:oklch(92.462% .001 247.838);--color-base-content:oklch(20% 0 0);--color-primary:oklch(90% .063 306.703);--color-primary-content:oklch(49% .265 301.924);--color-secondary:oklch(89% .058 10.001);--color-secondary-content:oklch(51% .222 16.935);--color-accent:oklch(90% .093 164.15);--color-accent-content:oklch(50% .118 165.612);--color-neutral:oklch(55% .046 257.417);--color-neutral-content:oklch(92% .013 255.508);--color-info:oklch(86% .127 207.078);--color-info-content:oklch(52% .105 223.128);--color-success:oklch(87% .15 154.449);--color-success-content:oklch(52% .154 150.069);--color-warning:oklch(83% .128 66.29);--color-warning-content:oklch(55% .195 38.402);--color-error:oklch(80% .114 19.571);--color-error-content:oklch(50% .213 27.518);--radius-selector:1rem;--radius-field:2rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:2px;--depth:0;--noise:0}
+[data-theme=fantasy]{color-scheme:light;--color-base-100:oklch(100% 0 0);--color-base-200:oklch(93% 0 0);--color-base-300:oklch(86% 0 0);--color-base-content:oklch(27.807% .029 256.847);--color-primary:oklch(37.45% .189 325.02);--color-primary-content:oklch(87.49% .037 325.02);--color-secondary:oklch(53.92% .162 241.36);--color-secondary-content:oklch(90.784% .032 241.36);--color-accent:oklch(75.98% .204 56.72);--color-accent-content:oklch(15.196% .04 56.72);--color-neutral:oklch(27.807% .029 256.847);--color-neutral-content:oklch(85.561% .005 256.847);--color-info:oklch(72.06% .191 231.6);--color-info-content:oklch(0% 0 0);--color-success:oklch(64.8% .15 160);--color-success-content:oklch(0% 0 0);--color-warning:oklch(84.71% .199 83.87);--color-warning-content:oklch(0% 0 0);--color-error:oklch(71.76% .221 22.18);--color-error-content:oklch(0% 0 0);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:1;--noise:0}
+[data-theme=wireframe]{color-scheme:light;--color-base-100:oklch(100% 0 0);--color-base-200:oklch(97% 0 0);--color-base-300:oklch(94% 0 0);--color-base-content:oklch(20% 0 0);--color-primary:oklch(87% 0 0);--color-primary-content:oklch(26% 0 0);--color-secondary:oklch(87% 0 0);--color-secondary-content:oklch(26% 0 0);--color-accent:oklch(87% 0 0);--color-accent-content:oklch(26% 0 0);--color-neutral:oklch(87% 0 0);--color-neutral-content:oklch(26% 0 0);--color-info:oklch(44% .11 240.79);--color-info-content:oklch(90% .058 230.902);--color-success:oklch(43% .095 166.913);--color-success-content:oklch(90% .093 164.15);--color-warning:oklch(47% .137 46.201);--color-warning-content:oklch(92% .12 95.746);--color-error:oklch(44% .177 26.899);--color-error-content:oklch(88% .062 18.334);--radius-selector:0rem;--radius-field:.25rem;--radius-box:.25rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=black]{color-scheme:dark;--color-base-100:oklch(0% 0 0);--color-base-200:oklch(19% 0 0);--color-base-300:oklch(22% 0 0);--color-base-content:oklch(87.609% 0 0);--color-primary:oklch(35% 0 0);--color-primary-content:oklch(100% 0 0);--color-secondary:oklch(35% 0 0);--color-secondary-content:oklch(100% 0 0);--color-accent:oklch(35% 0 0);--color-accent-content:oklch(100% 0 0);--color-neutral:oklch(35% 0 0);--color-neutral-content:oklch(100% 0 0);--color-info:oklch(45.201% .313 264.052);--color-info-content:oklch(89.04% .062 264.052);--color-success:oklch(51.975% .176 142.495);--color-success-content:oklch(90.395% .035 142.495);--color-warning:oklch(96.798% .211 109.769);--color-warning-content:oklch(19.359% .042 109.769);--color-error:oklch(62.795% .257 29.233);--color-error-content:oklch(12.559% .051 29.233);--radius-selector:0rem;--radius-field:0rem;--radius-box:0rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=luxury]{color-scheme:dark;--color-base-100:oklch(14.076% .004 285.822);--color-base-200:oklch(20.219% .004 308.229);--color-base-300:oklch(23.219% .004 308.229);--color-base-content:oklch(75.687% .123 76.89);--color-primary:oklch(100% 0 0);--color-primary-content:oklch(20% 0 0);--color-secondary:oklch(27.581% .064 261.069);--color-secondary-content:oklch(85.516% .012 261.069);--color-accent:oklch(36.674% .051 338.825);--color-accent-content:oklch(87.334% .01 338.825);--color-neutral:oklch(24.27% .057 59.825);--color-neutral-content:oklch(93.203% .089 90.861);--color-info:oklch(79.061% .121 237.133);--color-info-content:oklch(15.812% .024 237.133);--color-success:oklch(78.119% .192 132.154);--color-success-content:oklch(15.623% .038 132.154);--color-warning:oklch(86.127% .136 102.891);--color-warning-content:oklch(17.225% .027 102.891);--color-error:oklch(71.753% .176 22.568);--color-error-content:oklch(14.35% .035 22.568);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:1;--noise:0}
+[data-theme=dracula]{color-scheme:dark;--color-base-100:oklch(28.822% .022 277.508);--color-base-200:oklch(26.805% .02 277.508);--color-base-300:oklch(24.787% .019 277.508);--color-base-content:oklch(97.747% .007 106.545);--color-primary:oklch(75.461% .183 346.812);--color-primary-content:oklch(15.092% .036 346.812);--color-secondary:oklch(74.202% .148 301.883);--color-secondary-content:oklch(14.84% .029 301.883);--color-accent:oklch(83.392% .124 66.558);--color-accent-content:oklch(16.678% .024 66.558);--color-neutral:oklch(39.445% .032 275.524);--color-neutral-content:oklch(87.889% .006 275.524);--color-info:oklch(88.263% .093 212.846);--color-info-content:oklch(17.652% .018 212.846);--color-success:oklch(87.099% .219 148.024);--color-success-content:oklch(17.419% .043 148.024);--color-warning:oklch(95.533% .134 112.757);--color-warning-content:oklch(19.106% .026 112.757);--color-error:oklch(68.22% .206 24.43);--color-error-content:oklch(13.644% .041 24.43);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=cmyk]{color-scheme:light;--color-base-100:oklch(100% 0 0);--color-base-200:oklch(95% 0 0);--color-base-300:oklch(90% 0 0);--color-base-content:oklch(20% 0 0);--color-primary:oklch(71.772% .133 239.443);--color-primary-content:oklch(14.354% .026 239.443);--color-secondary:oklch(64.476% .202 359.339);--color-secondary-content:oklch(12.895% .04 359.339);--color-accent:oklch(94.228% .189 105.306);--color-accent-content:oklch(18.845% .037 105.306);--color-neutral:oklch(21.778% 0 0);--color-neutral-content:oklch(84.355% 0 0);--color-info:oklch(68.475% .094 217.284);--color-info-content:oklch(13.695% .018 217.284);--color-success:oklch(46.949% .162 321.406);--color-success-content:oklch(89.389% .032 321.406);--color-warning:oklch(71.236% .159 52.023);--color-warning-content:oklch(14.247% .031 52.023);--color-error:oklch(62.013% .208 28.717);--color-error-content:oklch(12.402% .041 28.717);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=autumn]{color-scheme:light;--color-base-100:oklch(95.814% 0 0);--color-base-200:oklch(89.107% 0 0);--color-base-300:oklch(82.4% 0 0);--color-base-content:oklch(19.162% 0 0);--color-primary:oklch(40.723% .161 17.53);--color-primary-content:oklch(88.144% .032 17.53);--color-secondary:oklch(61.676% .169 23.865);--color-secondary-content:oklch(12.335% .033 23.865);--color-accent:oklch(73.425% .094 60.729);--color-accent-content:oklch(14.685% .018 60.729);--color-neutral:oklch(54.367% .037 51.902);--color-neutral-content:oklch(90.873% .007 51.902);--color-info:oklch(69.224% .097 207.284);--color-info-content:oklch(13.844% .019 207.284);--color-success:oklch(60.995% .08 174.616);--color-success-content:oklch(12.199% .016 174.616);--color-warning:oklch(70.081% .164 56.844);--color-warning-content:oklch(14.016% .032 56.844);--color-error:oklch(53.07% .241 24.16);--color-error-content:oklch(90.614% .048 24.16);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:1;--noise:0}
+[data-theme=business]{color-scheme:dark;--color-base-100:oklch(24.353% 0 0);--color-base-200:oklch(22.648% 0 0);--color-base-300:oklch(20.944% 0 0);--color-base-content:oklch(84.87% 0 0);--color-primary:oklch(41.703% .099 251.473);--color-primary-content:oklch(88.34% .019 251.473);--color-secondary:oklch(64.092% .027 229.389);--color-secondary-content:oklch(12.818% .005 229.389);--color-accent:oklch(67.271% .167 35.791);--color-accent-content:oklch(13.454% .033 35.791);--color-neutral:oklch(27.441% .013 253.041);--color-neutral-content:oklch(85.488% .002 253.041);--color-info:oklch(62.616% .143 240.033);--color-info-content:oklch(12.523% .028 240.033);--color-success:oklch(70.226% .094 156.596);--color-success-content:oklch(14.045% .018 156.596);--color-warning:oklch(77.482% .115 81.519);--color-warning-content:oklch(15.496% .023 81.519);--color-error:oklch(51.61% .146 29.674);--color-error-content:oklch(90.322% .029 29.674);--radius-selector:0rem;--radius-field:.25rem;--radius-box:.25rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=acid]{color-scheme:light;--color-base-100:oklch(98% 0 0);--color-base-200:oklch(95% 0 0);--color-base-300:oklch(91% 0 0);--color-base-content:oklch(0% 0 0);--color-primary:oklch(71.9% .357 330.759);--color-primary-content:oklch(14.38% .071 330.759);--color-secondary:oklch(73.37% .224 48.25);--color-secondary-content:oklch(14.674% .044 48.25);--color-accent:oklch(92.78% .264 122.962);--color-accent-content:oklch(18.556% .052 122.962);--color-neutral:oklch(21.31% .128 278.68);--color-neutral-content:oklch(84.262% .025 278.68);--color-info:oklch(60.72% .227 252.05);--color-info-content:oklch(12.144% .045 252.05);--color-success:oklch(85.72% .266 158.53);--color-success-content:oklch(17.144% .053 158.53);--color-warning:oklch(91.01% .212 100.5);--color-warning-content:oklch(18.202% .042 100.5);--color-error:oklch(64.84% .293 29.349);--color-error-content:oklch(12.968% .058 29.349);--radius-selector:1rem;--radius-field:1rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:1;--noise:0}
+[data-theme=lemonade]{color-scheme:light;--color-base-100:oklch(98.71% .02 123.72);--color-base-200:oklch(91.8% .018 123.72);--color-base-300:oklch(84.89% .017 123.72);--color-base-content:oklch(19.742% .004 123.72);--color-primary:oklch(58.92% .199 134.6);--color-primary-content:oklch(11.784% .039 134.6);--color-secondary:oklch(77.75% .196 111.09);--color-secondary-content:oklch(15.55% .039 111.09);--color-accent:oklch(85.39% .201 100.73);--color-accent-content:oklch(17.078% .04 100.73);--color-neutral:oklch(30.98% .075 108.6);--color-neutral-content:oklch(86.196% .015 108.6);--color-info:oklch(86.19% .047 224.14);--color-info-content:oklch(17.238% .009 224.14);--color-success:oklch(86.19% .047 157.85);--color-success-content:oklch(17.238% .009 157.85);--color-warning:oklch(86.19% .047 102.15);--color-warning-content:oklch(17.238% .009 102.15);--color-error:oklch(86.19% .047 25.85);--color-error-content:oklch(17.238% .009 25.85);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=night]{color-scheme:dark;--color-base-100:oklch(20.768% .039 265.754);--color-base-200:oklch(19.314% .037 265.754);--color-base-300:oklch(17.86% .034 265.754);--color-base-content:oklch(84.153% .007 265.754);--color-primary:oklch(75.351% .138 232.661);--color-primary-content:oklch(15.07% .027 232.661);--color-secondary:oklch(68.011% .158 276.934);--color-secondary-content:oklch(13.602% .031 276.934);--color-accent:oklch(72.36% .176 350.048);--color-accent-content:oklch(14.472% .035 350.048);--color-neutral:oklch(27.949% .036 260.03);--color-neutral-content:oklch(85.589% .007 260.03);--color-info:oklch(68.455% .148 237.251);--color-info-content:oklch(0% 0 0);--color-success:oklch(78.452% .132 181.911);--color-success-content:oklch(15.69% .026 181.911);--color-warning:oklch(83.242% .139 82.95);--color-warning-content:oklch(16.648% .027 82.95);--color-error:oklch(71.785% .17 13.118);--color-error-content:oklch(14.357% .034 13.118);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=coffee]{color-scheme:dark;--color-base-100:oklch(24% .023 329.708);--color-base-200:oklch(21% .021 329.708);--color-base-300:oklch(16% .019 329.708);--color-base-content:oklch(72.354% .092 79.129);--color-primary:oklch(71.996% .123 62.756);--color-primary-content:oklch(14.399% .024 62.756);--color-secondary:oklch(34.465% .029 199.194);--color-secondary-content:oklch(86.893% .005 199.194);--color-accent:oklch(42.621% .074 224.389);--color-accent-content:oklch(88.524% .014 224.389);--color-neutral:oklch(16.51% .015 326.261);--color-neutral-content:oklch(83.302% .003 326.261);--color-info:oklch(79.49% .063 184.558);--color-info-content:oklch(15.898% .012 184.558);--color-success:oklch(74.722% .072 131.116);--color-success-content:oklch(14.944% .014 131.116);--color-warning:oklch(88.15% .14 87.722);--color-warning-content:oklch(17.63% .028 87.722);--color-error:oklch(77.318% .128 31.871);--color-error-content:oklch(15.463% .025 31.871);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=winter]{color-scheme:light;--color-base-100:oklch(100% 0 0);--color-base-200:oklch(97.466% .011 259.822);--color-base-300:oklch(93.268% .016 262.751);--color-base-content:oklch(41.886% .053 255.824);--color-primary:oklch(56.86% .255 257.57);--color-primary-content:oklch(91.372% .051 257.57);--color-secondary:oklch(42.551% .161 282.339);--color-secondary-content:oklch(88.51% .032 282.339);--color-accent:oklch(59.939% .191 335.171);--color-accent-content:oklch(11.988% .038 335.171);--color-neutral:oklch(19.616% .063 257.651);--color-neutral-content:oklch(83.923% .012 257.651);--color-info:oklch(88.127% .085 214.515);--color-info-content:oklch(17.625% .017 214.515);--color-success:oklch(80.494% .077 197.823);--color-success-content:oklch(16.098% .015 197.823);--color-warning:oklch(89.172% .045 71.47);--color-warning-content:oklch(17.834% .009 71.47);--color-error:oklch(73.092% .11 20.076);--color-error-content:oklch(14.618% .022 20.076);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=dim]{color-scheme:dark;--color-base-100:oklch(30.857% .023 264.149);--color-base-200:oklch(28.036% .019 264.182);--color-base-300:oklch(26.346% .018 262.177);--color-base-content:oklch(82.901% .031 222.959);--color-primary:oklch(86.133% .141 139.549);--color-primary-content:oklch(17.226% .028 139.549);--color-secondary:oklch(73.375% .165 35.353);--color-secondary-content:oklch(14.675% .033 35.353);--color-accent:oklch(74.229% .133 311.379);--color-accent-content:oklch(14.845% .026 311.379);--color-neutral:oklch(24.731% .02 264.094);--color-neutral-content:oklch(82.901% .031 222.959);--color-info:oklch(86.078% .142 206.182);--color-info-content:oklch(17.215% .028 206.182);--color-success:oklch(86.171% .142 166.534);--color-success-content:oklch(17.234% .028 166.534);--color-warning:oklch(86.163% .142 94.818);--color-warning-content:oklch(17.232% .028 94.818);--color-error:oklch(82.418% .099 33.756);--color-error-content:oklch(16.483% .019 33.756);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=nord]{color-scheme:light;--color-base-100:oklch(95.127% .007 260.731);--color-base-200:oklch(93.299% .01 261.788);--color-base-300:oklch(89.925% .016 262.749);--color-base-content:oklch(32.437% .022 264.182);--color-primary:oklch(59.435% .077 254.027);--color-primary-content:oklch(11.887% .015 254.027);--color-secondary:oklch(69.651% .059 248.687);--color-secondary-content:oklch(13.93% .011 248.687);--color-accent:oklch(77.464% .062 217.469);--color-accent-content:oklch(15.492% .012 217.469);--color-neutral:oklch(45.229% .035 264.131);--color-neutral-content:oklch(89.925% .016 262.749);--color-info:oklch(69.207% .062 332.664);--color-info-content:oklch(13.841% .012 332.664);--color-success:oklch(76.827% .074 131.063);--color-success-content:oklch(15.365% .014 131.063);--color-warning:oklch(85.486% .089 84.093);--color-warning-content:oklch(17.097% .017 84.093);--color-error:oklch(60.61% .12 15.341);--color-error-content:oklch(12.122% .024 15.341);--radius-selector:1rem;--radius-field:.25rem;--radius-box:.5rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=sunset]{color-scheme:dark;--color-base-100:oklch(22% .019 237.69);--color-base-200:oklch(20% .019 237.69);--color-base-300:oklch(18% .019 237.69);--color-base-content:oklch(77.383% .043 245.096);--color-primary:oklch(74.703% .158 39.947);--color-primary-content:oklch(14.94% .031 39.947);--color-secondary:oklch(72.537% .177 2.72);--color-secondary-content:oklch(14.507% .035 2.72);--color-accent:oklch(71.294% .166 299.844);--color-accent-content:oklch(14.258% .033 299.844);--color-neutral:oklch(26% .019 237.69);--color-neutral-content:oklch(70% .019 237.69);--color-info:oklch(85.559% .085 206.015);--color-info-content:oklch(17.111% .017 206.015);--color-success:oklch(85.56% .085 144.778);--color-success-content:oklch(17.112% .017 144.778);--color-warning:oklch(85.569% .084 74.427);--color-warning-content:oklch(17.113% .016 74.427);--color-error:oklch(85.511% .078 16.886);--color-error-content:oklch(17.102% .015 16.886);--radius-selector:1rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:0;--noise:0}
+[data-theme=caramellatte]{color-scheme:light;--color-base-100:oklch(98% .016 73.684);--color-base-200:oklch(95% .038 75.164);--color-base-300:oklch(90% .076 70.697);--color-base-content:oklch(40% .123 38.172);--color-primary:oklch(0% 0 0);--color-primary-content:oklch(100% 0 0);--color-secondary:oklch(22.45% .075 37.85);--color-secondary-content:oklch(90% .076 70.697);--color-accent:oklch(46.44% .111 37.85);--color-accent-content:oklch(90% .076 70.697);--color-neutral:oklch(55% .195 38.402);--color-neutral-content:oklch(98% .016 73.684);--color-info:oklch(42% .199 265.638);--color-info-content:oklch(90% .076 70.697);--color-success:oklch(43% .095 166.913);--color-success-content:oklch(90% .076 70.697);--color-warning:oklch(82% .189 84.429);--color-warning-content:oklch(41% .112 45.904);--color-error:oklch(70% .191 22.216);--color-error-content:oklch(39% .141 25.723);--radius-selector:2rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:2px;--depth:1;--noise:1}
+[data-theme=abyss]{color-scheme:dark;--color-base-100:oklch(20% .08 209);--color-base-200:oklch(15% .08 209);--color-base-300:oklch(10% .08 209);--color-base-content:oklch(90% .076 70.697);--color-primary:oklch(92% .2653 125);--color-primary-content:oklch(50% .2653 125);--color-secondary:oklch(83.27% .0764 298.3);--color-secondary-content:oklch(43.27% .0764 298.3);--color-accent:oklch(43% 0 0);--color-accent-content:oklch(98% 0 0);--color-neutral:oklch(30% .08 209);--color-neutral-content:oklch(90% .076 70.697);--color-info:oklch(74% .16 232.661);--color-info-content:oklch(29% .066 243.157);--color-success:oklch(79% .209 151.711);--color-success-content:oklch(26% .065 152.934);--color-warning:oklch(84.8% .1962 84.62);--color-warning-content:oklch(44.8% .1962 84.62);--color-error:oklch(65% .1985 24.22);--color-error-content:oklch(27% .1985 24.22);--radius-selector:2rem;--radius-field:.25rem;--radius-box:.5rem;--size-selector:.25rem;--size-field:.25rem;--border:1px;--depth:1;--noise:0}
+[data-theme=silk]{color-scheme:light;--color-base-100:oklch(97% .0035 67.78);--color-base-200:oklch(95% .0081 61.42);--color-base-300:oklch(90% .0081 61.42);--color-base-content:oklch(40% .0081 61.42);--color-primary:oklch(23.27% .0249 284.3);--color-primary-content:oklch(94.22% .2505 117.44);--color-secondary:oklch(23.27% .0249 284.3);--color-secondary-content:oklch(73.92% .2135 50.94);--color-accent:oklch(23.27% .0249 284.3);--color-accent-content:oklch(88.92% .2061 189.9);--color-neutral:oklch(20% 0 0);--color-neutral-content:oklch(80% .0081 61.42);--color-info:oklch(80.39% .1148 241.68);--color-info-content:oklch(30.39% .1148 241.68);--color-success:oklch(83.92% .0901 136.87);--color-success-content:oklch(23.92% .0901 136.87);--color-warning:oklch(83.92% .1085 80);--color-warning-content:oklch(43.92% .1085 80);--color-error:oklch(75.1% .1814 22.37);--color-error-content:oklch(35.1% .1814 22.37);--radius-selector:2rem;--radius-field:.5rem;--radius-box:1rem;--size-selector:.25rem;--size-field:.25rem;--border:2px;--depth:1;--noise:0}
+
+/* --- everything below is derived from the theme above --- */
+:root{
+  --ground:    var(--color-base-200);
+  --surface:   var(--color-base-100);
+  --surface-2: color-mix(in oklab, var(--color-base-200) 62%, var(--color-base-100));
+  --sunk:      var(--color-base-300);
+
+  --ink:   var(--color-base-content);
+  --ink-2: color-mix(in oklab, var(--color-base-content) 76%, var(--color-base-100));
+  --ink-3: color-mix(in oklab, var(--color-base-content) 56%, var(--color-base-100));
+  --ink-4: color-mix(in oklab, var(--color-base-content) 40%, var(--color-base-100));
+
+  --line:   color-mix(in oklab, var(--color-base-content) 15%, var(--color-base-100));
+  --line-2: color-mix(in oklab, var(--color-base-content) 30%, var(--color-base-100));
+
+  /* primary drives the main action (Save); accent drives selection + focus */
+  --amber:      var(--color-primary);
+  --amber-2:    color-mix(in oklab, var(--color-primary) 84%, var(--color-base-content));
+  --amber-ink:  var(--color-primary-content);
+  --amber-wash: color-mix(in oklab, var(--color-primary) 14%, var(--color-base-100));
+  --amber-line: color-mix(in oklab, var(--color-primary) 38%, var(--color-base-100));
+
+  --indigo:      var(--color-accent);
+  --indigo-2:    color-mix(in oklab, var(--color-accent) 84%, var(--color-base-content));
+  --indigo-ink:  var(--color-accent-content);
+  --indigo-wash: color-mix(in oklab, var(--color-accent) 15%, var(--color-base-100));
+  --indigo-line: color-mix(in oklab, var(--color-accent) 38%, var(--color-base-100));
+
+  --ok:      var(--color-success);
+  --ok-ink:  var(--color-success-content);
+  --ok-wash: color-mix(in oklab, var(--color-success) 15%, var(--color-base-100));
+  --ok-line: color-mix(in oklab, var(--color-success) 38%, var(--color-base-100));
+
+  --warn:      var(--color-warning);
+  --warn-ink:  var(--color-warning-content);
+  --warn-wash: color-mix(in oklab, var(--color-warning) 15%, var(--color-base-100));
+  --warn-line: color-mix(in oklab, var(--color-warning) 38%, var(--color-base-100));
+
+  --err:      var(--color-error);
+  --err-ink:  var(--color-error-content);
+  --err-wash: color-mix(in oklab, var(--color-error) 15%, var(--color-base-100));
+  --err-line: color-mix(in oklab, var(--color-error) 38%, var(--color-base-100));
+
+  --code-bg:  color-mix(in oklab, var(--color-base-300) 72%, var(--color-base-100));
+  --code-ink: var(--color-base-content);
+  --sel:      color-mix(in oklab, var(--color-accent) 30%, var(--color-base-100));
+
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",Consolas,monospace;
+
+  --r:     var(--radius-field, 7px);
+  --r-box: var(--radius-box, 10px);
+  --shadow: 0 1px 2px color-mix(in oklab, var(--color-base-content) 9%, transparent),
+            0 8px 24px color-mix(in oklab, var(--color-base-content) 13%, transparent);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:var(--sans);font-size:14px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  display:flex;flex-direction:column;overflow:hidden;
+}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--indigo);outline-offset:2px;border-radius:3px}
+.mono{font-family:var(--mono)}
+
+/* ---------- top bar ---------- */
+.appbar{
+  flex:none;display:flex;align-items:center;gap:14px;
+  padding:9px 16px;background:var(--surface);border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.brand .glyph{
+  width:24px;height:24px;border-radius:6px;background:var(--indigo);color:var(--indigo-ink);
+  display:grid;place-items:center;font-size:13px;font-weight:700;flex:none;
+}
+.projchip{
+  display:flex;align-items:center;gap:8px;min-width:0;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:100px;
+  padding:4px 12px;font-family:var(--mono);font-size:12px;color:var(--ink-2);
+}
+.projchip .path{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:38vw}
+.spacer{flex:1}
+
+.badge{
+  font-size:11px;font-weight:600;letter-spacing:.03em;padding:3px 9px;border-radius:100px;
+  border:1px solid var(--line);background:var(--surface-2);color:var(--ink-3);white-space:nowrap;
+}
+.badge.ok{color:var(--ok);background:var(--ok-wash);border-color:var(--ok-line)}
+.badge.warn{color:var(--warn);background:var(--warn-wash);border-color:var(--warn-line)}
+.badge.err{color:var(--err);background:var(--err-wash);border-color:var(--err-line)}
+.badge.info{color:var(--indigo);background:var(--indigo-wash);border-color:var(--indigo-line)}
+
+.btn{
+  border:1px solid var(--line-2);background:var(--surface);color:var(--ink);
+  border-radius:var(--r);padding:6px 13px;font-size:13px;font-weight:500;cursor:pointer;white-space:nowrap;
+}
+.btn:hover:not(:disabled){background:var(--surface-2);border-color:var(--ink-4)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.primary{background:var(--amber);border-color:var(--amber);color:var(--amber-ink);font-weight:600}
+.btn.primary:hover:not(:disabled){background:var(--amber-2);border-color:var(--amber-2)}
+.btn.ghost{border-color:transparent;background:transparent;color:var(--ink-2)}
+.btn.ghost:hover:not(:disabled){background:var(--surface-2);color:var(--ink)}
+.btn.danger{color:var(--err);border-color:var(--err-line);background:var(--err-wash)}
+.btn.sm{padding:3px 9px;font-size:12px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--amber);flex:none;display:inline-block}
+.iconbtn{
+  display:grid;place-items:center;width:32px;height:32px;padding:0;flex:none;cursor:pointer;
+  border:1px solid transparent;background:transparent;color:var(--ink-3);border-radius:var(--r);
+}
+.iconbtn:hover{background:var(--surface-2);color:var(--ink);border-color:var(--line)}
+.iconbtn svg{width:18px;height:18px;display:block}
+
+/* ---------- tabs ---------- */
+.tabs{
+  flex:none;display:flex;gap:2px;padding:0 16px;
+  background:var(--surface);border-bottom:1px solid var(--line);
+}
+.tab{
+  border:0;background:transparent;padding:9px 14px 10px;cursor:pointer;
+  font-size:13px;font-weight:500;color:var(--ink-3);
+  border-bottom:2px solid transparent;margin-bottom:-1px;
+  display:flex;align-items:center;gap:7px;
+}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--indigo);font-weight:600}
+.tab .count{
+  font-size:11px;font-family:var(--mono);background:var(--surface-2);
+  border:1px solid var(--line);border-radius:100px;padding:0 6px;color:var(--ink-3);
+}
+.tab .count.err{background:var(--err-wash);border-color:var(--err-line);color:var(--err)}
+
+/* ---------- workspace ---------- */
+.work{flex:1;min-height:0;display:none}
+.work.on{display:flex}
+.rail{
+  width:290px;flex:none;display:flex;flex-direction:column;min-height:0;
+  background:var(--surface);border-right:1px solid var(--line);
+}
+.railtop{flex:none;padding:10px;border-bottom:1px solid var(--line);display:flex;gap:8px}
+.search{
+  flex:1;min-width:0;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);
+  padding:6px 10px;font:inherit;font-size:13px;color:var(--ink);
+}
+.search::placeholder{color:var(--ink-4)}
+.raillist{flex:1;overflow-y:auto;padding:6px}
+.grouphead{
+  font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-4);
+  padding:12px 8px 5px;
+}
+.row{
+  width:100%;text-align:left;border:1px solid transparent;background:transparent;
+  border-radius:var(--r);padding:8px 10px;cursor:pointer;display:flex;flex-direction:column;gap:4px;margin-bottom:1px;
+}
+.row:hover{background:var(--surface-2)}
+.row[aria-current="true"]{background:var(--indigo-wash);border-color:var(--indigo-line)}
+.row .name{font-weight:600;font-size:13px;color:var(--ink);word-break:break-word;line-height:1.35}
+.row[aria-current="true"] .name{color:var(--indigo)}
+.row .meta{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.chip{
+  font-size:10.5px;font-family:var(--mono);color:var(--ink-3);
+  background:var(--surface-2);border:1px solid var(--line);border-radius:4px;padding:0 5px;
+}
+.row[aria-current="true"] .chip{background:var(--surface)}
+.chip.on{color:var(--ok);background:var(--ok-wash);border-color:var(--ok-line)}
+.chip.bad{color:var(--err);background:var(--err-wash);border-color:var(--err-line)}
+.railfoot{flex:none;padding:10px;border-top:1px solid var(--line);display:flex;gap:8px}
+.railfoot .btn{flex:1}
+
+.pane{flex:1;min-width:0;overflow-y:auto;padding:20px 24px 60px}
+.paneinner{max-width:860px;margin:0 auto}
+
+/* ---------- sections ---------- */
+.sec{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-box);
+  margin-bottom:16px;overflow:hidden;
+}
+.sechead{
+  padding:11px 16px;border-bottom:1px solid var(--line);background:var(--surface-2);
+  display:flex;align-items:center;gap:10px;
+}
+.sechead h2{margin:0;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2)}
+.sechead .hint{font-size:12px;color:var(--ink-4);font-weight:400;text-transform:none;letter-spacing:0}
+.secbody{padding:16px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.f{display:flex;flex-direction:column;gap:5px;min-width:0}
+.f.wide{grid-column:1/-1}
+.f label{font-size:12px;font-weight:600;color:var(--ink-2)}
+.f .hint{font-size:11.5px;color:var(--ink-4);line-height:1.45}
+.f input[type=text],.f input[type=number],.f select,.f textarea{
+  width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);
+  padding:7px 10px;font:inherit;font-size:13px;color:var(--ink);
+}
+.f textarea{min-height:74px;resize:vertical;line-height:1.5}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--indigo);background:var(--surface)}
+.f input.mono,.f textarea.mono{font-family:var(--mono);font-size:12.5px}
+.f select{cursor:pointer}
+.check{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink);cursor:pointer;padding:4px 0}
+.check input{width:15px;height:15px;accent-color:var(--indigo);cursor:pointer}
+
+/* ---------- repeatable items ---------- */
+.item{
+  border:1px solid var(--line);border-radius:var(--r);background:var(--surface-2);
+  padding:13px;margin-bottom:10px;
+}
+.itemhead{display:flex;align-items:center;gap:9px;margin-bottom:11px}
+.itemhead .n{
+  font-family:var(--mono);font-size:11px;color:var(--ink-3);background:var(--surface);
+  border:1px solid var(--line);border-radius:4px;padding:1px 7px;flex:none;
+}
+.itemhead .t{font-weight:600;font-size:13px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.stack{display:flex;flex-direction:column;gap:8px}
+.linerow{display:flex;gap:8px;align-items:flex-start}
+.linerow .f{flex:1}
+
+.empty{
+  border:1px dashed var(--line-2);border-radius:var(--r);padding:22px;text-align:center;
+  color:var(--ink-4);font-size:13px;
+}
+
+/* ---------- connect screen ---------- */
+.connect{
+  flex:1;min-height:0;overflow-y:auto;display:none;place-items:center;padding:32px 20px;
+}
+.connect.on{display:grid}
+.connectcard{
+  max-width:620px;width:100%;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r-box);padding:32px;box-shadow:var(--shadow);
+}
+.connectcard h1{margin:0 0 8px;font-size:26px;letter-spacing:-.02em}
+.connectcard .sub{color:var(--ink-2);margin:0 0 22px;font-size:14px}
+.steplist{display:flex;flex-direction:column;gap:14px;margin:0 0 24px;padding:0;list-style:none}
+.steplist li{display:flex;gap:12px;align-items:flex-start}
+.steplist .num{
+  width:22px;height:22px;border-radius:50%;background:var(--indigo-wash);color:var(--indigo);
+  border:1px solid var(--indigo-line);display:grid;place-items:center;flex:none;
+  font-size:11px;font-weight:700;font-family:var(--mono);
+}
+.steplist .txt{font-size:13.5px;color:var(--ink-2)}
+.steplist .txt b{color:var(--ink)}
+.connectbtns{display:flex;gap:10px;flex-wrap:wrap}
+.modenote{
+  margin-top:20px;padding:12px 14px;border-radius:var(--r);font-size:12.5px;line-height:1.55;
+  background:var(--warn-wash);border:1px solid var(--warn-line);color:var(--ink-2);
+}
+.modenote b{color:var(--warn)}
+
+/* ---------- check tab ---------- */
+.issue{
+  display:flex;gap:12px;align-items:flex-start;padding:13px 15px;
+  border:1px solid var(--line);border-radius:var(--r);background:var(--surface);margin-bottom:9px;
+}
+.issue .ic{
+  width:20px;height:20px;border-radius:50%;flex:none;display:grid;place-items:center;
+  font-size:12px;font-weight:700;margin-top:1px;
+}
+.issue.e .ic{background:var(--err-wash);color:var(--err);border:1px solid var(--err-line)}
+.issue.w .ic{background:var(--warn-wash);color:var(--warn);border:1px solid var(--warn-line)}
+.issue .body{flex:1;min-width:0}
+.issue .t{font-weight:600;font-size:13px;margin-bottom:3px}
+.issue .d{font-size:12.5px;color:var(--ink-2);line-height:1.5}
+.issue .d code{
+  font-family:var(--mono);font-size:11.5px;background:var(--surface-2);
+  border:1px solid var(--line);border-radius:3px;padding:1px 5px;
+}
+.allclear{
+  text-align:center;padding:44px 20px;color:var(--ink-3);
+  border:1px solid var(--ok-line);background:var(--ok-wash);border-radius:var(--r);
+}
+.allclear .big{font-size:17px;font-weight:600;color:var(--ok);margin-bottom:5px}
+
+/* ---------- toast / misc ---------- */
+.flash{
+  position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+  background:var(--ink);color:var(--ground);padding:10px 18px;border-radius:100px;
+  font-size:13px;font-weight:500;box-shadow:var(--shadow);z-index:90;max-width:90vw;text-align:center;
+}
+.flash.err{background:var(--err);color:var(--err-ink)}
+@media (prefers-reduced-motion:no-preference){
+  .flash{animation:pop .22s ease}
+  @keyframes pop{from{opacity:0;transform:translate(-50%,8px)}to{opacity:1;transform:translate(-50%,0)}}
+}
+.sub-note{font-size:12px;color:var(--ink-4);margin-top:10px;line-height:1.5}
+.divider{height:1px;background:var(--line);margin:16px 0}
+h3.mini{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin:0 0 10px}
+
+/* ---------- theme picker ---------- */
+.themegrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:9px}
+.themecard{
+  cursor:pointer;text-align:left;padding:10px 11px;display:flex;flex-direction:column;gap:9px;
+  border-radius:var(--r);font:inherit;
+  /* these resolve against the card's own data-theme, so each one previews itself */
+  background:var(--color-base-100);
+  color:var(--color-base-content);
+  border:1px solid color-mix(in oklab, var(--color-base-content) 20%, var(--color-base-100));
+}
+.themecard:hover{border-color:color-mix(in oklab, var(--color-base-content) 45%, var(--color-base-100))}
+.themecard[aria-pressed="true"]{
+  outline:2px solid var(--color-primary);outline-offset:1px;
+  border-color:var(--color-primary);
+}
+.themecard .tname{font-size:12.5px;font-weight:600;text-transform:capitalize;letter-spacing:-.01em}
+.themecard .tchips{display:flex;gap:4px}
+.themecard .tchips i{flex:1;height:15px;border-radius:3px}
+.themesys{
+  grid-column:1/-1;background:var(--surface-2);color:var(--ink);
+  border:1px dashed var(--line-2);
+}
+.themesys .tname{color:var(--ink);text-transform:none}
+.themesys .tsub{font-size:11.5px;color:var(--ink-3)}
+
+/* ---------- credits dialog ---------- */
+dialog.credits{
+  border:0;padding:0;background:transparent;max-width:min(620px,92vw);width:100%;
+  color:var(--ink);
+}
+dialog.credits::backdrop{background:rgba(8,11,16,.62);backdrop-filter:blur(2px)}
+.creditscard{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r-box);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+.creditshead{
+  display:flex;align-items:flex-start;gap:14px;padding:20px 22px 16px;border-bottom:1px solid var(--line);
+}
+.creditshead h2{margin:0 0 4px;font-size:19px;letter-spacing:-.02em}
+.creditshead p{margin:0;font-size:13px;color:var(--ink-2);line-height:1.5}
+.creditsbody{padding:18px 22px;max-height:min(56vh,520px);overflow-y:auto}
+.creditsfoot{
+  padding:14px 22px;border-top:1px solid var(--line);background:var(--surface-2);
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.creditsfoot .fine{flex:1;min-width:180px;font-size:11.5px;color:var(--ink-4);line-height:1.5}
+.plugrow{
+  display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);
+}
+.plugrow:last-child{border-bottom:0}
+.plugrow > .info{flex:1;min-width:0}   /* direct child only — a nested .badge.info must not inherit this */
+.plugrow .nm{font-family:var(--mono);font-size:13px;font-weight:500;color:var(--ink)}
+.plugrow .ds{font-size:12.5px;color:var(--ink-2);margin-top:2px;line-height:1.45}
+.plugrow a.get{
+  flex:none;font-size:12px;font-weight:600;text-decoration:none;white-space:nowrap;
+  color:var(--indigo);background:var(--indigo-wash);border:1px solid var(--indigo-line);
+  border-radius:100px;padding:4px 12px;margin-top:2px;
+}
+.plugrow a.get:hover{background:var(--indigo);color:var(--indigo-ink)}
+.creditslinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.creditslinks a{
+  font-size:12.5px;text-decoration:none;color:var(--ink-2);
+  background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);padding:6px 12px;
+}
+.creditslinks a:hover{border-color:var(--indigo);color:var(--indigo)}
+
+/* ---------- objective summary + drill-down ---------- */
+.stagerow{display:flex;align-items:baseline;gap:9px;margin:14px 0 7px}
+.stagerow:first-child{margin-top:0}
+.stagetag{
+  font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--indigo);background:var(--indigo-wash);border:1px solid var(--indigo-line);
+  border-radius:100px;padding:2px 9px;
+}
+.stagecount{font-size:11.5px;color:var(--ink-4)}
+.objsummary{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px}
+.objsummary li{
+  display:flex;align-items:center;gap:9px;margin:0;padding:7px 11px;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);
+}
+.objsummary li+li{margin-top:-1px}
+.objtext{flex:1;min-width:0;font-size:13px;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.objbits{display:flex;gap:4px;flex:none}
+
+.drillhead{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.drilltitle{display:flex;flex-direction:column;min-width:0}
+.drilltitle h2{margin:0;font-size:19px;letter-spacing:-.02em}
+.drilltitle span{font-family:var(--mono);font-size:12px;color:var(--ink-3);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.note-inline{
+  font-size:12.5px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);
+  border-left:3px solid var(--indigo);border-radius:0 var(--r) var(--r) 0;
+  padding:10px 13px;margin-bottom:16px;line-height:1.5;
+}
+
+/* ---------- visual pickers ---------- */
+.swatchgrid{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;max-width:280px}
+.swatch{
+  aspect-ratio:1;border-radius:4px;border:2px solid transparent;cursor:pointer;padding:0;
+  box-shadow:inset 0 0 0 1px rgba(128,128,128,.35);position:relative;
+}
+.swatch:hover{transform:scale(1.12)}
+.swatch[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px rgba(128,128,128,.35),0 0 0 2px var(--surface)}
+@media (prefers-reduced-motion:reduce){.swatch:hover{transform:none}}
+.pickerbtn{
+  display:flex;align-items:center;gap:9px;width:100%;text-align:left;cursor:pointer;
+  background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);padding:6px 10px;
+}
+.pickerbtn:hover{border-color:var(--ink-4)}
+.pickerbtn .prev{width:26px;height:26px;flex:none;border-radius:4px;background:var(--sunk);
+  background-repeat:no-repeat;image-rendering:pixelated;box-shadow:inset 0 0 0 1px var(--line)}
+.pickerbtn .lbl{font-size:12.5px;color:var(--ink-2);font-family:var(--mono)}
+
+.iconpick{
+  display:grid;grid-template-columns:repeat(auto-fill,36px);gap:3px;
+  max-height:210px;overflow-y:auto;padding:7px;background:var(--sunk);
+  border:1px solid var(--line);border-radius:var(--r);margin-top:7px;
+}
+.iconcell{
+  width:36px;height:36px;border:1px solid transparent;border-radius:4px;cursor:pointer;padding:2px;
+  background:transparent;background-repeat:no-repeat;image-rendering:pixelated;
+}
+.iconcell:hover{border-color:var(--ink-4);background-color:var(--surface-2)}
+.iconcell[aria-pressed="true"]{border-color:var(--indigo);background-color:var(--indigo-wash)}
+
+.rgbarow{display:flex;gap:9px;align-items:center}
+.rgbarow input[type=color]{
+  width:44px;height:32px;padding:2px;border:1px solid var(--line);border-radius:var(--r);
+  background:var(--surface-2);cursor:pointer;flex:none;
+}
+.rgbarow input[type=range]{flex:1;accent-color:var(--indigo);min-width:70px}
+.rgbarow .val{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);width:34px;text-align:right;flex:none}
+.gradbar{height:26px;border-radius:5px;margin-top:8px;box-shadow:inset 0 0 0 1px var(--line);
+  background-image:linear-gradient(45deg,#8883 25%,transparent 25%,transparent 75%,#8883 75%),
+    linear-gradient(45deg,#8883 25%,transparent 25%,transparent 75%,#8883 75%);
+  background-size:12px 12px;background-position:0 0,6px 6px}
+.gradbar .fill{width:100%;height:100%;border-radius:5px}
+
+/* ---------- previews ---------- */
+.previewwrap{background:var(--sunk);border:1px solid var(--line);border-radius:var(--r);padding:14px;overflow-x:auto}
+.previewwrap canvas{display:block;max-width:100%;image-rendering:auto;border-radius:3px}
+.previewbar{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:11px}
+.previewbar .grow{flex:1}
+.previewnote{font-size:11.5px;color:var(--ink-4);margin-top:9px;line-height:1.5}
+.screenmock{position:relative;margin:0 auto;background:#000;border-radius:4px;overflow:hidden;
+  box-shadow:0 4px 18px rgba(0,0,0,.35)}
+.screenmock canvas{position:absolute;inset:0;width:100%;height:100%}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.seg button{border:0;background:var(--surface-2);color:var(--ink-3);padding:4px 11px;font-size:12px;cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--indigo);color:var(--indigo-ink);font-weight:600}
+@media (max-width:840px){
+  .rail{width:220px}
+  .pane{padding:16px}
+}
+</style>
+</head>
+<body>
+<header class="appbar">
+  <div class="brand"><span class="glyph">Q</span> Quest Forge</div>
+  <div class="projchip" id="projchip" hidden>
+    <span class="path" id="projpath"></span>
+  </div>
+  <span class="badge" id="modebadge" hidden></span>
+  <div class="spacer"></div>
+  <span class="badge warn" id="dirtybadge" hidden><span class="dot"></span> Unsaved changes</span>
+  <button class="iconbtn" id="btn-credits" type="button" title="Plugins &amp; credits" aria-label="Plugins and credits">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="9"/><path d="M12 16.5v-5.2"/><path d="M12 8.2h.01"/>
+    </svg>
+  </button>
+  <button class="iconbtn" id="btn-theme" type="button" title="Theme" aria-label="Theme">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 3a9 9 0 1 0 0 18c.86 0 1.55-.7 1.55-1.55 0-.4-.16-.77-.42-1.04a1.55 1.55 0 0 1 1.1-2.65h1.82A4.95 4.95 0 0 0 21 10.8C21 6.49 16.97 3 12 3Z"/>
+      <circle cx="7.6" cy="12.2" r="1.05" fill="currentColor" stroke="none"/>
+      <circle cx="9.9" cy="7.9" r="1.05" fill="currentColor" stroke="none"/>
+      <circle cx="14.8" cy="8.1" r="1.05" fill="currentColor" stroke="none"/>
+    </svg>
+  </button>
+  <button class="btn" id="btn-reload" type="button" hidden>Reload</button>
+  <button class="btn primary" id="btn-save" type="button" hidden>Save to project</button>
+</header>
+
+<nav class="tabs" id="tabs" hidden>
+  <button class="tab" type="button" role="tab" data-tab="quests" aria-selected="true">
+    Quests <span class="count" id="c-quests">0</span>
+  </button>
+  <button class="tab" type="button" role="tab" data-tab="cats" aria-selected="false">
+    Categories <span class="count" id="c-cats">0</span>
+  </button>
+  <button class="tab" type="button" role="tab" data-tab="toasts" aria-selected="false">
+    Pop-ups <span class="count" id="c-toasts">0</span>
+  </button>
+  <button class="tab" type="button" role="tab" data-tab="check" aria-selected="false">
+    Check <span class="count" id="c-check">0</span>
+  </button>
+</nav>
+
+<!-- connect screen -->
+<div class="connect on" id="screen-connect">
+  <div class="connectcard">
+    <h1>Open your RPG Maker MZ project</h1>
+    <p class="sub">
+      Quest Forge reads the quests and pop-up messages out of <span class="mono">js/plugins.js</span>,
+      lets you edit them in a real form instead of nested JSON boxes, and writes them back.
+    </p>
+    <ol class="steplist">
+      <li><span class="num">1</span><span class="txt">Pick your <b>project folder</b> — the one containing <span class="mono">js/</span>, <span class="mono">data/</span> and <span class="mono">index.html</span>.</span></li>
+      <li><span class="num">2</span><span class="txt">Edit quests, objectives, rewards and notifications. Pop-up messages are picked from a list, so a name can never be mistyped.</span></li>
+      <li><span class="num">3</span><span class="txt">Hit <b>Save to project</b>. A timestamped backup of <span class="mono">plugins.js</span> is written first.</span></li>
+    </ol>
+    <div class="connectbtns">
+      <button class="btn primary" id="btn-open" type="button">Choose project folder</button>
+      <button class="btn" id="btn-openfile" type="button">Load a plugins.js file instead</button>
+      <input type="file" id="filein" accept=".js" hidden>
+    </div>
+    <div class="modenote" id="modenote" hidden></div>
+    <p class="sub-note">
+      Close RPG Maker MZ before saving. The editor writes <span class="mono">js/plugins.js</span> directly,
+      and the editor overwrites that file when it saves the project.
+    </p>
+  </div>
+</div>
+
+<!-- quests -->
+<div class="work" id="screen-quests">
+  <aside class="rail">
+    <div class="railtop">
+      <input class="search" id="q-search" type="text" placeholder="Search quests…" autocomplete="off">
+    </div>
+    <div class="raillist" id="q-list"></div>
+    <div class="railfoot">
+      <button class="btn" id="q-add" type="button">+ New quest</button>
+      <button class="btn" id="q-dup" type="button" title="Duplicate selected">Copy</button>
+    </div>
+  </aside>
+  <div class="pane"><div class="paneinner" id="q-detail"></div></div>
+</div>
+
+<!-- categories -->
+<div class="work" id="screen-cats">
+  <aside class="rail">
+    <div class="raillist" id="cat-list"></div>
+    <div class="railfoot"><button class="btn" id="cat-add" type="button">+ New category</button></div>
+  </aside>
+  <div class="pane"><div class="paneinner" id="cat-detail"></div></div>
+</div>
+
+<!-- toasts -->
+<div class="work" id="screen-toasts">
+  <aside class="rail">
+    <div class="raillist" id="t-list"></div>
+    <div class="railfoot"><button class="btn" id="t-add" type="button">+ New pop-up</button></div>
+  </aside>
+  <div class="pane"><div class="paneinner" id="t-detail"></div></div>
+</div>
+
+<!-- check -->
+<div class="work" id="screen-check">
+  <div class="pane" style="flex:1"><div class="paneinner" id="check-body"></div></div>
+</div>
+
+<dialog class="credits" id="themedlg">
+  <div class="creditscard">
+    <div class="creditshead">
+      <div style="flex:1;min-width:0">
+        <h2>Theme</h2>
+        <p>The 35 built-in themes from <b>daisyUI</b>, inlined into this file &mdash; nothing is
+           loaded from the internet. Click one to apply it right away.</p>
+      </div>
+      <button class="btn sm ghost" id="theme-close" type="button" aria-label="Close">&#10005;</button>
+    </div>
+    <div class="creditsbody"><div class="themegrid" id="themegrid"></div></div>
+    <div class="creditsfoot">
+      <span class="fine">Themes &copy; daisyUI, MIT licensed. Your choice is remembered on this computer.</span>
+      <button class="btn" id="theme-done" type="button">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="credits" id="credits">
+  <div class="creditscard">
+    <div class="creditshead">
+      <div style="flex:1;min-width:0">
+        <h2>Plugins &amp; credits</h2>
+        <p>Quest Forge is an unofficial editor. It doesn't contain any plugin code &mdash; it edits the
+           settings of plugins written by <b>Casper Gaming</b>, whose Dev Corner is where you download
+           them and read their documentation.</p>
+      </div>
+      <button class="btn sm ghost" id="credits-close" type="button" aria-label="Close">&#10005;</button>
+    </div>
+    <div class="creditsbody" id="credits-body"></div>
+    <div class="creditsfoot">
+      <span class="fine">Plugins &copy; Casper Gaming, used under their own terms. Quest Forge isn't
+        affiliated with or endorsed by Casper Gaming.</span>
+      <button class="btn" id="credits-done" type="button">Close</button>
+    </div>
+  </div>
+</dialog>
+
+<datalist id="dl-switches"></datalist>
+<datalist id="dl-variables"></datalist>
+<datalist id="dl-items"></datalist>
+<datalist id="dl-weapons"></datalist>
+<datalist id="dl-armors"></datalist>
+<datalist id="dl-commonevents"></datalist>
+
+<script>
+/* ===========================================================
+   Quest Forge — a CGMZ Quest System editor
+   Reads and writes js/plugins.js of an RPG Maker MZ project.
+   =========================================================== */
+"use strict";
+/* ---------- tiny DOM helpers ---------- */
+const $ = (s) => document.querySelector(s);
+function el(tag, props, ...kids) {
+  const n = document.createElement(tag);
+  if (props) for (const k in props) {
+    const v = props[k];
+    if (v === undefined || v === null || v === false) continue;
+    if (k === "class") n.className = v;
+    else if (k === "text") n.textContent = v;
+    else if (k === "html") n.innerHTML = v;
+    else if (k.startsWith("on")) n.addEventListener(k.slice(2), v);
+    else if (k === "hidden") n.hidden = !!v;
+    else n.setAttribute(k, v);
+  }
+  for (const c of kids.flat()) {
+    if (c === null || c === undefined || c === false) continue;
+    n.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
+  }
+  return n;
+}
+function flash(msg, isErr) {
+  const old = $(".flash"); if (old) old.remove();
+  const f = el("div", { class: "flash" + (isErr ? " err" : ""), text: msg });
+  document.body.appendChild(f);
+  setTimeout(() => f.remove(), isErr ? 6000 : 2600);
+}
+
+/* ---------- state ---------- */
+const S = {
+  mode: null,            // "fs" (read/write) | "file" (read-only + download)
+  dirHandle: null,
+  pluginsHandle: null,
+  projectName: "",
+  header: "// Generated by RPG Maker.\n// Do not edit this file directly.",
+  plugins: [],           // raw $plugins array
+  qsIndex: -1,           // index of CGMZ_QuestSystem
+  tmIndex: -1,           // index of CGMZ_ToastManager
+  quests: [],
+  categories: [],
+  toasts: [],
+  names: { switches: [], variables: [], items: [], weapons: [], armors: [], commonEvents: [] },
+  eventRefs: [],         // {quest, command, where, file}
+  scriptTexts: [],       // {text, where, file} — script calls that may name a quest
+  scanned: false,
+  qSel: 0, catSel: 0, tSel: 0,
+  qView: "main",         // "main" | "objectives" — drill-down inside the Quests tab
+  qFilter: "",
+  dirty: false,
+  tab: "quests",
+};
+
+function setDirty(v) {
+  S.dirty = v;
+  $("#dirtybadge").hidden = !v;
+}
+
+/* ===========================================================
+   plugins.js parsing / serialising
+   The file is:  header lines, "var $plugins =", a JSON array, ";"
+   Parameter values are strings; nested structures are JSON
+   strings *inside* those strings, sometimes two levels deep.
+   =========================================================== */
+function parsePluginsJs(text) {
+  const start = text.indexOf("[");
+  const end = text.lastIndexOf("]");
+  if (start < 0 || end < 0 || end < start) throw new Error("Couldn't find the $plugins array in this file.");
+  const header = text.slice(0, text.indexOf("var $plugins")).replace(/\s+$/, "");
+  let arr;
+  try {
+    arr = JSON.parse(text.slice(start, end + 1));
+  } catch (e) {
+    throw new Error("The $plugins array isn't valid JSON — was this file hand-edited? (" + e.message + ")");
+  }
+  if (!Array.isArray(arr)) throw new Error("$plugins is not an array.");
+  return { header: header || "// Generated by RPG Maker.\n// Do not edit this file directly.", plugins: arr };
+}
+
+function serializePluginsJs(header, plugins) {
+  return header + "\nvar $plugins =\n[\n" +
+    plugins.map((p) => JSON.stringify(p)).join(",\n") +
+    "\n];\n";
+}
+
+/* --- CGMZ parameter encodings --- */
+// "[\"{...}\",\"{...}\"]"  ->  [ {...}, {...} ]
+function readStructArray(s) {
+  if (!s) return [];
+  let outer;
+  try { outer = JSON.parse(s); } catch (e) { return []; }
+  if (!Array.isArray(outer)) return [];
+  const out = [];
+  for (const entry of outer) {
+    if (typeof entry !== "string") { if (entry && typeof entry === "object") out.push(entry); continue; }
+    try { out.push(JSON.parse(entry)); } catch (e) { /* skip unreadable row */ }
+  }
+  return out;
+}
+function writeStructArray(list) {
+  return JSON.stringify(list.map((o) => JSON.stringify(o)));
+}
+// "[\"line\",\"line\"]" -> ["line","line"]
+function readStringArray(s) {
+  if (!s) return [];
+  try { const a = JSON.parse(s); return Array.isArray(a) ? a.map(String) : []; } catch (e) { return []; }
+}
+function writeStringArray(list) { return JSON.stringify(list); }
+// "{...}" -> {...}
+function readStruct(s) {
+  if (!s) return null;
+  try { const o = JSON.parse(s); return (o && typeof o === "object") ? o : null; } catch (e) { return null; }
+}
+function writeStruct(o) { return o ? JSON.stringify(o) : ""; }
+
+/* --- defaults, matching each plugin's struct definition --- */
+function newQuest(name) {
+  return {
+    "Name": name || "New Quest", "Difficulty": "", "Length": "", "Location": "", "Quest Giver": "",
+    "Category": "", "Recommended Level": "0", "Missable": "false", "Disable Unpin": "false",
+    "List Image": "", "Background Image": "", "Accept Scene Image": "",
+    "Unstarted Objective": "\\c[3]Accept\\c[0] this quest to see its objectives.",
+    "Unstarted Description": "", "Completed Description": "", "Failed Description": "",
+    "Board Description": "", "Board Switch": "0", "Started Switch": "0",
+    "Description": "[]", "Objectives": "[]",
+    "Reward Gold": "0", "Hide Reward Gold": "false", "Reward Exp": "0", "Hide Reward Exp": "false",
+    "Reward Common Event": "0", "Reward Items": "[]", "Reward Weapons": "[]", "Reward Armors": "[]",
+    "Reward Custom": "[]", "Integrations": "", "Reward Drop Tables": "[]",
+    "Discover Toast": "", "Start Toast": "", "Complete Toast": "", "Fail Toast": "",
+    "Objective Complete Toast": ""
+  };
+}
+function newObjective(id, stage) {
+  return {
+    "id": id || "obj1", "Description": "", "Stage": String(stage || 1), "Max Progress": "0",
+    "Use Automatic Tracking": "false", "Auto Remove Items": "false", "Gold Tracking": "0",
+    "Item Tracking": "", "Weapon Tracking": "", "Armor Tracking": "",
+    "Variable Tracking": "0", "Switch Tracking": "0", "Objective Switch": "0"
+  };
+}
+function newCategory(name) {
+  return {
+    "Name": name || "New Category", "Type": "Category", "Display Name": name || "New Category",
+    "Icon": "0", "Description": "", "Color1": "rgba(32, 32, 32, 0.5)", "Color2": "rgba(0, 0, 0, 0.5)",
+    "Text Color": "0", "Start Expanded": "true"
+  };
+}
+function newToast(id) {
+  return {
+    "Id": id || "new-popup", "Type": "Text", "Common Properties": "", "Note": "",
+    "Width": "0", "Height": "0", "Windowskin Tone": "", "Windowskin": "",
+    "Sound Effect": JSON.stringify({ "Name": "", "Volume": "90", "Pitch": "100", "Pan": "0" }),
+    "Display Time": "0",
+    "Rumble": JSON.stringify({ "Duration": "0", "Weak Magnitude": "1.00", "Strong Magnitude": "1.00", "Start Delay": "0" }),
+    "Text Properties": "", "Text Line 1": "", "Text Line 1 Color": "0", "Text Line 1 Alignment": "center",
+    "Text Line 2": "", "Text Line 2 Color": "0", "Text Line 2 Alignment": "center",
+    "Background Style": "Window", "Image Properties": "", "Image": "", "Show Background": "false",
+    "Paragraph Properties": "", "Header Line": "", "Header Dividers": "true",
+    "Header Divider Color 1": "1", "Header Divider Color 2": "0", "Paragraph": "", "Paragraph Alignment": "center"
+  };
+}
+
+/* ---------- pull the working model out of the raw plugins ---------- */
+function ingestPlugins(parsed) {
+  S.header = parsed.header;
+  S.plugins = parsed.plugins;
+  S.qsIndex = S.plugins.findIndex((p) => p && p.name === "CGMZ_QuestSystem");
+  S.tmIndex = S.plugins.findIndex((p) => p && p.name === "CGMZ_ToastManager");
+  if (S.qsIndex < 0) throw new Error("This project has no CGMZ_QuestSystem entry in its plugin list. Add and enable the plugin in RPG Maker first.");
+  const qp = S.plugins[S.qsIndex].parameters || {};
+  S.quests = readStructArray(qp["Quests"]);
+  S.categories = readStructArray(qp["Categories"]);
+  S.toasts = S.tmIndex >= 0 ? readStructArray((S.plugins[S.tmIndex].parameters || {})["Toast Presets"]) : [];
+  S.qSel = 0; S.catSel = 0; S.tSel = 0;
+}
+
+/* ---------- push the working model back into the raw plugins ---------- */
+function applyToPlugins() {
+  const qp = S.plugins[S.qsIndex].parameters;
+  qp["Quests"] = writeStructArray(S.quests);
+  qp["Categories"] = writeStructArray(S.categories);
+  if (S.tmIndex >= 0) {
+    S.plugins[S.tmIndex].parameters["Toast Presets"] = writeStructArray(S.toasts);
+  }
+}
+/* ===========================================================
+   Loading a project
+   =========================================================== */
+async function readTextFile(dir, ...path) {
+  let d = dir;
+  for (let i = 0; i < path.length - 1; i++) d = await d.getDirectoryHandle(path[i]);
+  const fh = await d.getFileHandle(path[path.length - 1]);
+  return (await fh.getFile()).text();
+}
+async function readJsonIfPresent(dir, name) {
+  try { return JSON.parse(await readTextFile(dir, "data", name)); }
+  catch (e) { return null; }
+}
+
+async function openProjectFolder() {
+  if (!window.showDirectoryPicker) {
+    flash("This browser can't open folders. Use Chrome or Edge, or load a plugins.js file instead.", true);
+    return;
+  }
+  let dir;
+  try {
+    dir = await window.showDirectoryPicker({ mode: "readwrite", id: "rmmz-project" });
+  } catch (e) {
+    if (e && e.name === "AbortError") return;
+    showModeNote("Folder access was refused: " + e.message +
+      " If you opened this file directly from disk, serve it over http://localhost instead, or use the plugins.js fallback below.");
+    return;
+  }
+  try {
+    const jsDir = await dir.getDirectoryHandle("js");
+    const ph = await jsDir.getFileHandle("plugins.js");
+    const text = await (await ph.getFile()).text();
+    ingestPlugins(parsePluginsJs(text));
+    S.mode = "fs";
+    S.dirHandle = dir;
+    S.pluginsHandle = ph;
+    S.projectName = dir.name;
+    await loadAuxData(dir);
+    await loadGameArt(dir);
+    await scanEventReferences(dir);
+    enterEditor(dir.name);
+  } catch (e) {
+    flash(e.message, true);
+  }
+}
+
+function openPluginsFile() { $("#filein").click(); }
+
+async function handlePluginsFile(file) {
+  try {
+    const text = await file.text();
+    ingestPlugins(parsePluginsJs(text));
+    S.mode = "file";
+    S.dirHandle = null; S.pluginsHandle = null;
+    S.projectName = file.name;
+    S.scanned = false;
+    buildDatalists();
+    enterEditor(file.name);
+    flash("Loaded read-only — saving will download a plugins.js you copy back into js/");
+  } catch (e) {
+    flash(e.message, true);
+  }
+}
+
+/* switch / variable / item names, so pickers show something meaningful */
+async function loadAuxData(dir) {
+  const sys = await readJsonIfPresent(dir, "System.json");
+  S.names.switches = (sys && sys.switches) || [];
+  S.names.variables = (sys && sys.variables) || [];
+  const grab = (arr) => (arr || []).map((o) => (o && o.name) || "");
+  S.names.items = grab(await readJsonIfPresent(dir, "Items.json"));
+  S.names.weapons = grab(await readJsonIfPresent(dir, "Weapons.json"));
+  S.names.armors = grab(await readJsonIfPresent(dir, "Armors.json"));
+  S.names.commonEvents = grab(await readJsonIfPresent(dir, "CommonEvents.json"));
+  buildDatalists();
+}
+
+function fillDatalist(id, names) {
+  const dl = $(id); if (!dl) return;
+  dl.textContent = "";
+  const frag = document.createDocumentFragment();
+  names.forEach((nm, i) => {
+    if (i === 0 && !nm) { frag.appendChild(el("option", { value: "0" })); return; }
+    if (!nm) return;
+    frag.appendChild(el("option", { value: i + ": " + nm }));
+  });
+  dl.appendChild(frag);
+}
+function buildDatalists() {
+  fillDatalist("#dl-switches", S.names.switches);
+  fillDatalist("#dl-variables", S.names.variables);
+  fillDatalist("#dl-items", S.names.items);
+  fillDatalist("#dl-weapons", S.names.weapons);
+  fillDatalist("#dl-armors", S.names.armors);
+  fillDatalist("#dl-commonevents", S.names.commonEvents);
+}
+function idToLabel(kind, id) {
+  const n = Number(id) || 0;
+  if (!n) return "";
+  const nm = (S.names[kind] || [])[n];
+  return nm ? n + ": " + nm : String(n);
+}
+function labelToId(v) {
+  const m = String(v || "").match(/^\s*(\d+)/);
+  return m ? String(Number(m[1])) : "0";
+}
+
+/* ===========================================================
+   Scan the game's events for quest-name references.
+   Catches the classic bug: a quest gets renamed, events don't.
+   =========================================================== */
+async function scanEventReferences(dir) {
+  S.eventRefs = [];
+  S.scriptTexts = [];
+  S.scanned = false;
+  try {
+    const dataDir = await dir.getDirectoryHandle("data");
+    const files = [];
+    for await (const [name, handle] of dataDir.entries()) {
+      if (handle.kind !== "file") continue;
+      if (/^Map\d+\.json$/.test(name) || name === "CommonEvents.json") files.push([name, handle]);
+    }
+    const mapNames = await mapDisplayNames(dataDir);
+    for (const [name, handle] of files) {
+      let json;
+      try { json = JSON.parse(await (await handle.getFile()).text()); }
+      catch (e) { continue; }
+      const label = name === "CommonEvents.json"
+        ? "Common Events"
+        : (mapNames[Number(name.match(/\d+/)[0])] || name.replace(".json", ""));
+      collectRefs(json, label, name);
+    }
+    S.scanned = true;
+  } catch (e) {
+    S.scanned = false;
+  }
+}
+
+async function mapDisplayNames(dataDir) {
+  const out = {};
+  try {
+    const fh = await dataDir.getFileHandle("MapInfos.json");
+    const infos = JSON.parse(await (await fh.getFile()).text());
+    for (const m of infos) if (m && m.id) out[m.id] = m.name || ("Map" + m.id);
+  } catch (e) { /* no map names available */ }
+  return out;
+}
+
+/* Walk any event command list looking for CGMZ_QuestSystem plugin commands
+   (event command code 357) and record the "Quest Name" argument. */
+function collectRefs(json, label, file) {
+  const lists = [];
+  if (Array.isArray(json)) {
+    for (const ce of json) if (ce && Array.isArray(ce.list)) lists.push([ce.list, ce.name || ("CE " + ce.id)]);
+  }
+  if (json && Array.isArray(json.events)) {
+    for (const ev of json.events) {
+      if (!ev || !Array.isArray(ev.pages)) continue;
+      for (let p = 0; p < ev.pages.length; p++) {
+        const pg = ev.pages[p];
+        if (pg && Array.isArray(pg.list)) lists.push([pg.list, (ev.name || ("EV" + ev.id)) + (ev.pages.length > 1 ? " p" + (p + 1) : "")]);
+      }
+    }
+  }
+  for (const [list, who] of lists) {
+    const where = label + " › " + who;
+    let script = "";
+    for (const cmd of list) {
+      if (!cmd) continue;
+
+      /* plugin commands (MZ) */
+      if (cmd.code === 357) {
+        const p = cmd.parameters || [];
+        if (p[0] !== "CGMZ_QuestSystem") continue;
+        const args = p[3] || {};
+        const qn = args["Quest Name"];
+        if (typeof qn === "string" && qn.trim()) {
+          S.eventRefs.push({ quest: qn, command: p[1] || "", where: where, file: file });
+        }
+        if (typeof args["Quest Names"] === "string") {
+          for (const nm of readStringArray(args["Quest Names"])) {
+            if (nm && nm.trim()) S.eventRefs.push({ quest: nm, command: p[1] || "", where: where, file: file });
+          }
+        }
+        continue;
+      }
+
+      /* script calls and legacy MV-style plugin commands can name a quest
+         in free text, e.g. $cgmz.startQuest("cake-quest") */
+      if (cmd.code === 355 || cmd.code === 655) {
+        script += (cmd.parameters && cmd.parameters[0] ? cmd.parameters[0] : "") + "\n";
+        continue;
+      }
+      if (cmd.code === 356) {
+        script += (cmd.parameters && cmd.parameters[0] ? cmd.parameters[0] : "") + "\n";
+      }
+    }
+    if (script.trim()) S.scriptTexts.push({ text: script, where: where, file: file });
+  }
+}
+
+function refsForQuest(name) { return S.eventRefs.filter((r) => r.quest === name); }
+
+/* Script text that mentions this quest name as a quoted string. Requiring the
+   quotes keeps a quest called "Test" from matching every script in the game. */
+function scriptRefsForQuest(name) {
+  if (!name || !name.trim()) return [];
+  const needle = JSON.stringify(name).slice(1, -1); // escape as it would appear in source
+  const single = "'" + needle + "'";
+  const dbl = '"' + needle + '"';
+  return S.scriptTexts.filter((s) => s.text.includes(single) || s.text.includes(dbl));
+}
+
+/* Everything that would break if this quest were deleted. */
+function questReferences(name) {
+  const events = refsForQuest(name);
+  const scripts = scriptRefsForQuest(name);
+  return { events: events, scripts: scripts, total: events.length + scripts.length };
+}
+
+/* ===========================================================
+   Saving
+   =========================================================== */
+async function save() {
+  try {
+    applyToPlugins();
+    const text = serializePluginsJs(S.header, S.plugins);
+    // sanity: what we just built must parse back to the same thing
+    parsePluginsJs(text);
+
+    if (S.mode === "fs") {
+      const stamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+      try {
+        const jsDir = await S.dirHandle.getDirectoryHandle("js");
+        const bakName = "plugins.backup-" + stamp + ".js";
+        const cur = await (await S.pluginsHandle.getFile()).text();
+        const bak = await jsDir.getFileHandle(bakName, { create: true });
+        const bw = await bak.createWritable();
+        await bw.write(cur); await bw.close();
+      } catch (e) { /* backup is best-effort; carry on */ }
+
+      const w = await S.pluginsHandle.createWritable();
+      await w.write(text);
+      await w.close();
+      setDirty(false);
+      flash("Saved to js/plugins.js — reopen the project in RPG Maker to see it");
+    } else {
+      const blob = new Blob([text], { type: "text/javascript" });
+      const url = URL.createObjectURL(blob);
+      const a = el("a", { href: url, download: "plugins.js" });
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 4000);
+      setDirty(false);
+      flash("Downloaded plugins.js — copy it into your project's js/ folder");
+    }
+  } catch (e) {
+    flash("Save failed: " + e.message, true);
+  }
+}
+/* ===========================================================
+   Field builders. Every one writes straight back into the
+   underlying object and marks the document dirty.
+   =========================================================== */
+/* The visible preview registers a repaint hook here, so editing any field
+   updates the mock-up without rebuilding the form (which would steal focus). */
+let PREVIEW_REFRESH = null;
+function refreshPreview() { if (PREVIEW_REFRESH) { try { PREVIEW_REFRESH(); } catch (e) { } } }
+
+function touch(rerenderList) {
+  setDirty(true);
+  if (rerenderList) renderList();
+  refreshPreview();
+  updateCounts();
+}
+
+function fText(obj, key, label, opts) {
+  opts = opts || {};
+  const input = el("input", {
+    type: "text", value: obj[key] || "", class: opts.mono ? "mono" : "",
+    placeholder: opts.placeholder || "",
+    oninput: (e) => { obj[key] = e.target.value; touch(opts.live); }
+  });
+  return field(label, opts.hint, input, opts.wide);
+}
+function fNum(obj, key, label, opts) {
+  opts = opts || {};
+  const input = el("input", {
+    type: "number", value: obj[key] || "0", min: opts.min !== undefined ? opts.min : 0,
+    oninput: (e) => { obj[key] = String(e.target.value === "" ? 0 : e.target.value); touch(false); }
+  });
+  return field(label, opts.hint, input, opts.wide);
+}
+function fArea(obj, key, label, opts) {
+  opts = opts || {};
+  const ta = el("textarea", {
+    class: opts.mono ? "mono" : "", placeholder: opts.placeholder || "",
+    oninput: (e) => { obj[key] = e.target.value; touch(false); }
+  });
+  ta.value = obj[key] || "";
+  return field(label, opts.hint, ta, opts.wide !== false);
+}
+function fBool(obj, key, label, hint) {
+  const cb = el("input", {
+    type: "checkbox",
+    onchange: (e) => { obj[key] = e.target.checked ? "true" : "false"; touch(false); }
+  });
+  cb.checked = obj[key] === "true";
+  const wrap = el("div", { class: "f" },
+    el("label", { class: "check" }, cb, el("span", { text: label })),
+    hint ? el("span", { class: "hint", text: hint }) : null
+  );
+  return wrap;
+}
+function fSelect(obj, key, label, options, opts) {
+  opts = opts || {};
+  const sel = el("select", { onchange: (e) => { obj[key] = e.target.value; touch(opts.live); } });
+  for (const o of options) {
+    const value = typeof o === "string" ? o : o.value;
+    const text = typeof o === "string" ? o : o.label;
+    const op = el("option", { value: value, text: text });
+    if (String(obj[key] || "") === String(value)) op.selected = true;
+    sel.appendChild(op);
+  }
+  // keep an unknown stored value visible rather than silently rewriting it
+  const known = options.some((o) => String(typeof o === "string" ? o : o.value) === String(obj[key] || ""));
+  if (!known && obj[key]) {
+    const op = el("option", { value: obj[key], text: obj[key] + "  (not found)" });
+    op.selected = true; sel.insertBefore(op, sel.firstChild);
+  }
+  return field(label, opts.hint, sel, opts.wide);
+}
+/* id-backed picker with type-ahead over a shared datalist */
+function fPick(obj, key, label, kind, listId, opts) {
+  opts = opts || {};
+  const input = el("input", {
+    type: "text", list: listId, class: "mono", placeholder: "0 — none",
+    value: idToLabel(kind, obj[key]),
+    onchange: (e) => {
+      obj[key] = labelToId(e.target.value);
+      e.target.value = idToLabel(kind, obj[key]);
+      touch(false);
+    }
+  });
+  return field(label, opts.hint, input, opts.wide);
+}
+function field(label, hint, control, wide) {
+  return el("div", { class: "f" + (wide ? " wide" : "") },
+    el("label", { text: label }),
+    control,
+    hint ? el("span", { class: "hint", text: hint }) : null
+  );
+}
+function section(title, hintText, ...body) {
+  return el("div", { class: "sec" },
+    el("div", { class: "sechead" },
+      el("h2", { text: title }),
+      hintText ? el("span", { class: "hint", text: hintText }) : null
+    ),
+    el("div", { class: "secbody" }, ...body)
+  );
+}
+function toastOptions() {
+  return [{ value: "", label: "— no pop-up —" }].concat(
+    S.toasts.map((t) => ({ value: t.Id || "", label: t.Id || "(unnamed)" }))
+  );
+}
+
+/* ===========================================================
+   Quest editor
+   =========================================================== */
+function questIssueCount(q) {
+  let n = 0;
+  if (!q.Name || !q.Name.trim()) n++;
+  if (S.quests.filter((x) => x.Name === q.Name).length > 1) n++;
+  const objs = readStructArray(q.Objectives);
+  if (!objs.length) n++;
+  for (const o of objs) if (!o.id || !String(o.id).trim()) n++;
+  if (q.Category && !S.categories.some((c) => c.Name === q.Category)) n++;
+  for (const k of ["Discover Toast", "Start Toast", "Complete Toast", "Fail Toast", "Objective Complete Toast"]) {
+    if (q[k] && !S.toasts.some((t) => t.Id === q[k])) n++;
+  }
+  return n;
+}
+
+function renderQuestList() {
+  const wrap = $("#q-list");
+  wrap.textContent = "";
+  const filter = S.qFilter.toLowerCase();
+  const shown = S.quests.map((q, i) => ({ q, i }))
+    .filter(({ q }) => !filter || String(q.Name || "").toLowerCase().includes(filter) ||
+      String(q.Category || "").toLowerCase().includes(filter));
+
+  if (!shown.length) {
+    wrap.appendChild(el("div", { class: "empty", text: S.quests.length ? "No quest matches that search." : "No quests yet — add one below." }));
+    return;
+  }
+  const groups = new Map();
+  for (const row of shown) {
+    const key = row.q.Category || "(no category)";
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(row);
+  }
+  for (const [cat, rows] of groups) {
+    wrap.appendChild(el("div", { class: "grouphead", text: cat }));
+    for (const { q, i } of rows) {
+      const objs = readStructArray(q.Objectives);
+      const stages = new Set(objs.map((o) => String(o.Stage || "1")));
+      const wired = ["Discover Toast", "Start Toast", "Complete Toast", "Fail Toast", "Objective Complete Toast"]
+        .filter((k) => q[k]).length;
+      const bad = questIssueCount(q);
+      wrap.appendChild(el("button", {
+        class: "row", type: "button", "aria-current": String(i === S.qSel),
+        onclick: () => { S.qSel = i; S.qView = "main"; renderList(); renderDetail(); }
+      },
+        el("div", { class: "name", text: q.Name || "(unnamed quest)" }),
+        el("div", { class: "meta" },
+          el("span", { class: "chip", text: objs.length + " obj" }),
+          stages.size > 1 ? el("span", { class: "chip", text: stages.size + " stages" }) : null,
+          wired ? el("span", { class: "chip on", text: wired + " pop-up" }) : null,
+          bad ? el("span", { class: "chip bad", text: bad + " issue" + (bad > 1 ? "s" : "") }) : null
+        )
+      ));
+    }
+  }
+}
+
+function renderQuestDetail() {
+  const host = $("#q-detail");
+  host.textContent = "";
+  const q = S.quests[S.qSel];
+  if (!q) {
+    host.appendChild(el("div", { class: "empty", text: "Select a quest on the left, or create one." }));
+    return;
+  }
+  if (S.qView === "objectives") { renderObjectiveManager(q); return; }
+  const cats = [{ value: "", label: "— none —" }].concat(S.categories.map((c) => ({ value: c.Name, label: c.Name })));
+
+  /* --- identity --- */
+  host.appendChild(section("Identity", "The Name is the id events use — renaming it breaks existing events",
+    el("div", { class: "grid" },
+      fText(q, "Name", "Quest name", { live: true, hint: "Must be unique. Plugin commands refer to the quest by this exact text." }),
+      fSelect(q, "Category", "Category", cats, { live: true, hint: "Groups the quest in the log." }),
+      fText(q, "Quest Giver", "Quest giver", { hint: "Display only." }),
+      fText(q, "Difficulty", "Difficulty", { hint: "Free text, e.g. Easy. Sortable." }),
+      fText(q, "Length", "Length", { hint: "Free text, e.g. Short. Sortable." }),
+      fText(q, "Location", "Location", { hint: "Free text. Sortable." }),
+      fNum(q, "Recommended Level", "Recommended level", { hint: "0 hides it." }),
+      fBool(q, "Missable", "Missable", "Tags it in the log. Display only."),
+      fBool(q, "Disable Unpin", "Can't be unpinned", "Keeps it stuck on the tracker.")
+    )
+  ));
+
+  /* --- notifications: the headline feature --- */
+  const toastGrid = el("div", { class: "grid two" },
+    fSelect(q, "Discover Toast", "When discovered", toastOptions(), { live: true }),
+    fSelect(q, "Start Toast", "When started", toastOptions(), { live: true }),
+    fSelect(q, "Complete Toast", "When completed", toastOptions(), { live: true }),
+    fSelect(q, "Fail Toast", "When failed", toastOptions(), { live: true }),
+    fSelect(q, "Objective Complete Toast", "When an objective completes", toastOptions(), { live: true, wide: true })
+  );
+  const toastSec = section("Pop-up messages", "Little notices that appear during play — chosen from a list, never typed", toastGrid);
+  if (S.tmIndex < 0) {
+    toastSec.querySelector(".secbody").prepend(el("div", { class: "modenote", html:
+      "<b>The pop-up plugin isn't installed</b><br>These choices will still be saved, but nothing will appear in game until CGMZ Toast Manager is added and enabled in RPG Maker." }));
+  } else if (!S.toasts.length) {
+    toastSec.querySelector(".secbody").prepend(el("div", { class: "modenote", html:
+      "<b>No pop-up messages yet</b><br>Make one on the Pop-ups tab, then choose it here. Leaving these blank simply means no notice appears." }));
+  }
+  host.appendChild(toastSec);
+
+  /* --- objectives, summarised; full editing lives on its own screen --- */
+  host.appendChild(renderObjectiveSummary(q));
+
+  /* --- live preview of how this quest reads in game --- */
+  host.appendChild(section("Preview", "How this quest will look to the player", questPreview(q)));
+
+  /* --- descriptions --- */
+  host.appendChild(renderDescriptions(q));
+
+  /* --- rewards --- */
+  host.appendChild(renderRewards(q));
+
+  /* --- switches & images --- */
+  host.appendChild(section("Switches & images", null,
+    el("div", { class: "grid" },
+      fPick(q, "Started Switch", "Started switch", "switches", "dl-switches", { hint: "Turned ON when the quest starts." }),
+      fPick(q, "Board Switch", "Board switch", "switches", "dl-switches", { hint: "Must be ON to appear on a quest board." }),
+      fText(q, "List Image", "List image", { mono: true, hint: "img path, 72×72 recommended." }),
+      fText(q, "Background Image", "Background image", { mono: true, hint: "Behind the quest name, ~460×108." })
+    )
+  ));
+
+  /* --- event references --- */
+  host.appendChild(renderRefs(q));
+
+  /* --- delete, gated on nothing referencing this quest --- */
+  host.appendChild(renderDeleteQuest(q));
+}
+
+/* Delete is only offered when we have actually scanned the project and found
+   nothing pointing at this quest. "We couldn't check" is treated as unsafe,
+   because that is exactly when a silent break is most likely. */
+function renderDeleteQuest(q) {
+  const body = el("div", {});
+  const refs = questReferences(q.Name);
+  const canDelete = S.scanned && refs.total === 0;
+
+  const btn = el("button", {
+    class: "btn danger", type: "button", disabled: canDelete ? null : "disabled",
+    onclick: () => {
+      if (!canDelete) return;
+      if (!confirm("Delete “" + (q.Name || "this quest") + "”?\n\nNothing references it, so no events will break. This can't be undone from here, but a backup of plugins.js is written when you save.")) return;
+      const gone = q.Name;
+      S.quests.splice(S.qSel, 1);
+      S.qSel = Math.min(S.qSel, S.quests.length - 1);
+      if (S.qSel < 0) S.qSel = 0;
+      touch(true);
+      renderDetail();
+      flash("Deleted “" + gone + "” — save to write it to the project");
+    }
+  }, "Delete quest");
+  body.appendChild(btn);
+
+  if (canDelete) {
+    body.appendChild(el("p", { class: "sub-note", text:
+      "No event, script call or quest board references this quest, so removing it can't break anything." }));
+    return section("Delete quest", null, body);
+  }
+
+  /* blocked — say precisely why */
+  const note = el("div", { class: "modenote" });
+  if (!S.scanned) {
+    note.innerHTML = "<b>Can't confirm this quest is unused.</b> " +
+      "The project's events haven't been scanned, so deleting could silently break a plugin command. " +
+      "Reopen with <b>Choose project folder</b> (Chrome or Edge, served over http://localhost) and the check will run automatically.";
+  } else {
+    const bits = [];
+    if (refs.events.length) bits.push(refs.events.length + " event command" + (refs.events.length > 1 ? "s" : ""));
+    if (refs.scripts.length) bits.push(refs.scripts.length + " script call" + (refs.scripts.length > 1 ? "s" : ""));
+    const list = el("div", { class: "stack", style: "margin-top:9px" });
+    for (const r of refs.events) {
+      list.appendChild(el("div", { class: "chip", style: "padding:5px 9px;font-size:12px",
+        text: r.where + "  —  " + (r.command || "plugin command") }));
+    }
+    for (const r of refs.scripts) {
+      list.appendChild(el("div", { class: "chip", style: "padding:5px 9px;font-size:12px",
+        text: r.where + "  —  script call" }));
+    }
+    note.innerHTML = "<b>In use by " + bits.join(" and ") + ".</b> " +
+      "Deleting it would leave those pointing at a quest that no longer exists, and the plugin fails silently when that happens. " +
+      "Remove or repoint them in RPG Maker first, then reload here.";
+    note.appendChild(list);
+  }
+  body.appendChild(note);
+  return section("Delete quest", "Disabled while something still uses it", body);
+}
+/* ---------- objectives ---------- */
+/* ---------- compact summary shown inside the quest form ---------- */
+function renderObjectiveSummary(q) {
+  const objs = readStructArray(q.Objectives);
+  const body = el("div", {});
+  const open = () => { S.qView = "objectives"; renderDetail(); $(".pane").scrollTop = 0; };
+
+  if (!objs.length) {
+    body.appendChild(el("div", { class: "empty", text:
+      "No objectives yet. A quest whose current stage has no objectives completes the moment it starts." }));
+    body.appendChild(el("button", { class: "btn", type: "button", onclick: open }, "Add objectives →"));
+    return section("Objectives", null, body);
+  }
+
+  const stages = [...new Set(objs.map((o) => Number(o.Stage) || 1))].sort((a, b) => a - b);
+  for (const st of stages) {
+    const group = objs.filter((o) => (Number(o.Stage) || 1) === st);
+    body.appendChild(el("div", { class: "stagerow" },
+      el("span", { class: "stagetag", text: "Stage " + st }),
+      el("span", { class: "stagecount", text: group.length + " objective" + (group.length > 1 ? "s" : "") })
+    ));
+    const list = el("ul", { class: "objsummary" });
+    for (const o of group) {
+      const bits = [];
+      if (o["Use Automatic Tracking"] === "true") bits.push("auto");
+      if (Number(o["Max Progress"]) > 0) bits.push("0 / " + o["Max Progress"]);
+      if (!o.id || !String(o.id).trim()) bits.push("no id");
+      list.appendChild(el("li", {},
+        el("span", { class: "objtext", text: o.Description || "(no description)" }),
+        bits.length ? el("span", { class: "objbits" }, bits.map((b) =>
+          el("span", { class: "chip" + (b === "no id" ? " bad" : ""), text: b }))) : null
+      ));
+    }
+    body.appendChild(list);
+  }
+
+  body.appendChild(el("button", { class: "btn", type: "button", style: "margin-top:12px", onclick: open },
+    "Manage objectives →"));
+  return section("Objectives",
+    objs.length + " across " + stages.length + " stage" + (stages.length > 1 ? "s" : ""), body);
+}
+
+/* ---------- the full editor, on its own screen ---------- */
+function renderObjectiveManager(q) {
+  const host = $("#q-detail");
+  const objs = readStructArray(q.Objectives);
+  const commit = (relist) => { q.Objectives = writeStructArray(objs); touch(relist !== false); };
+  const back = () => { S.qView = "main"; renderDetail(); $(".pane").scrollTop = 0; };
+
+  host.appendChild(el("div", { class: "drillhead" },
+    el("button", { class: "btn ghost sm", type: "button", onclick: back }, "← Back to quest"),
+    el("div", { class: "drilltitle" },
+      el("h2", { text: "Objectives" }),
+      el("span", { text: q.Name || "(unnamed quest)" })
+    )
+  ));
+
+  host.appendChild(el("div", { class: "note-inline" },
+    "Objectives are grouped by stage. The player only sees the current stage; finishing every objective in it moves the quest to the next one."));
+
+  const stages = [...new Set(objs.map((o) => Number(o.Stage) || 1))].sort((a, b) => a - b);
+  if (!stages.length) stages.push(1);
+
+  for (const st of stages) {
+    const idxs = objs.map((o, i) => i).filter((i) => (Number(objs[i].Stage) || 1) === st);
+    const wrap = el("div", { class: "sec" });
+    wrap.appendChild(el("div", { class: "sechead" },
+      el("h2", { text: "Stage " + st }),
+      el("span", { class: "hint", text: idxs.length + " objective" + (idxs.length === 1 ? "" : "s") }),
+      el("span", { style: "flex:1" }),
+      el("button", {
+        class: "btn sm", type: "button", onclick: () => {
+          objs.push(newObjective(nextObjId(objs), st)); commit(); renderDetail();
+        }
+      }, "+ Add to this stage")
+    ));
+    const bodyEl = el("div", { class: "secbody" });
+    if (!idxs.length) bodyEl.appendChild(el("div", { class: "empty", text: "Nothing at this stage yet." }));
+    idxs.forEach((idx, posInGroup) => {
+      bodyEl.appendChild(objectiveCard(q, objs, idx, idxs, posInGroup, commit));
+    });
+    wrap.appendChild(bodyEl);
+    host.appendChild(wrap);
+  }
+
+  const nextStage = Math.max(0, ...stages) + 1;
+  host.appendChild(el("div", { style: "display:flex;gap:9px;flex-wrap:wrap" },
+    el("button", {
+      class: "btn", type: "button", onclick: () => {
+        objs.push(newObjective(nextObjId(objs), nextStage)); commit(); renderDetail();
+      }
+    }, "+ Start stage " + nextStage),
+    el("button", { class: "btn ghost", type: "button", onclick: back }, "Done")
+  ));
+
+  host.appendChild(section("Preview", "How these read in game", questPreview(q)));
+}
+
+function nextObjId(objs) {
+  let n = objs.length + 1, id = "obj" + n;
+  while (objs.some((x) => x.id === id)) { n++; id = "obj" + n; }
+  return id;
+}
+
+/* one objective's card; idxs/posInGroup let reordering stay inside its stage */
+function objectiveCard(q, objs, idx, idxs, posInGroup, commit) {
+  const o = objs[idx];
+  {
+    const auto = o["Use Automatic Tracking"] === "true";
+    const card = el("div", { class: "item" });
+    card.appendChild(el("div", { class: "itemhead" },
+      el("span", { class: "n", text: "#" + (posInGroup + 1) }),
+      el("span", { class: "t", text: o.Description || o.id || "(untitled objective)" }),
+      el("button", {
+        class: "btn sm ghost", type: "button", title: "Move up", onclick: () => {
+          if (posInGroup === 0) return;
+          const a = idxs[posInGroup - 1], b = idx;
+          const tmp = objs[a]; objs[a] = objs[b]; objs[b] = tmp;
+          commit(); renderDetail();
+        }
+      }, "↑"),
+      el("button", {
+        class: "btn sm ghost", type: "button", title: "Move down", onclick: () => {
+          if (posInGroup === idxs.length - 1) return;
+          const a = idxs[posInGroup + 1], b = idx;
+          const tmp = objs[a]; objs[a] = objs[b]; objs[b] = tmp;
+          commit(); renderDetail();
+        }
+      }, "↓"),
+      el("button", {
+        class: "btn sm danger", type: "button", onclick: () => {
+          objs.splice(idx, 1); commit(); renderDetail();
+        }
+      }, "Remove")
+    ));
+
+    const grid = el("div", { class: "grid" });
+    const idInput = el("input", {
+      type: "text", class: "mono", value: o.id || "",
+      oninput: (e) => { o.id = e.target.value; q.Objectives = writeStructArray(objs); touch(true); }
+    });
+    grid.appendChild(field("Objective id", "Unique within this quest. Must not be blank.", idInput));
+    grid.appendChild(fNumIn(o, "Stage", "Stage", objs, q, "Which stage reveals it. Quests start at 1."));
+    grid.appendChild(fNumIn(o, "Max Progress", "Max progress", objs, q, "Target count for a counted objective."));
+    card.appendChild(grid);
+
+    const descTa = el("textarea", {
+      oninput: (e) => { o.Description = e.target.value; q.Objectives = writeStructArray(objs); touch(false); card.querySelector(".t").textContent = e.target.value || o.id || "(untitled objective)"; }
+    });
+    descTa.value = o.Description || "";
+    card.appendChild(field("What the player reads", null, descTa, true));
+
+    card.appendChild(el("div", { class: "divider" }));
+    const autoCb = el("input", {
+      type: "checkbox",
+      onchange: (e) => {
+        o["Use Automatic Tracking"] = e.target.checked ? "true" : "false";
+        q.Objectives = writeStructArray(objs); touch(false); renderDetail();
+      }
+    });
+    autoCb.checked = auto;
+    card.appendChild(el("label", { class: "check" }, autoCb,
+      el("span", { text: "Track this automatically" })));
+    card.appendChild(el("div", { class: "hint", style: "font-size:11.5px;color:var(--ink-4);margin:2px 0 10px" },
+      "The plugin watches the party itself — one thing per objective."));
+
+    if (auto) {
+      const tgrid = el("div", { class: "grid" });
+      tgrid.appendChild(fNumIn(o, "Gold Tracking", "Gold needed", objs, q, "0 = not tracking gold."));
+      tgrid.appendChild(fPickIn(o, "Variable Tracking", "Variable", "variables", "dl-variables", objs, q, "Completes at Max Progress."));
+      tgrid.appendChild(fPickIn(o, "Switch Tracking", "Switch", "switches", "dl-switches", objs, q, "Completes when this turns ON."));
+      tgrid.appendChild(fStructPick(o, "Item Tracking", "Item", "Item", "items", "dl-items", objs, q));
+      tgrid.appendChild(fStructPick(o, "Weapon Tracking", "Weapon", "Weapon", "weapons", "dl-weapons", objs, q));
+      tgrid.appendChild(fStructPick(o, "Armor Tracking", "Armour", "Armor", "armors", "dl-armors", objs, q));
+      card.appendChild(tgrid);
+      const rm = el("input", {
+        type: "checkbox",
+        onchange: (e) => { o["Auto Remove Items"] = e.target.checked ? "true" : "false"; q.Objectives = writeStructArray(objs); touch(false); }
+      });
+      rm.checked = o["Auto Remove Items"] === "true";
+      card.appendChild(el("label", { class: "check" }, rm, el("span", { text: "Take the items/gold when it completes" })));
+    }
+
+    card.appendChild(el("div", { class: "divider" }));
+    card.appendChild(fPickIn(o, "Objective Switch", "Turn this switch ON when done", "switches", "dl-switches", objs, q, "Output — use it to trigger the next story beat."));
+    return card;
+  }
+}
+
+/* nested-struct field helpers that re-serialise their parent list */
+function fNumIn(o, key, label, list, q, hint) {
+  const input = el("input", {
+    type: "number", min: 0, value: o[key] || "0",
+    oninput: (e) => { o[key] = String(e.target.value === "" ? 0 : e.target.value); q.Objectives = writeStructArray(list); touch(false); }
+  });
+  return field(label, hint, input);
+}
+function fPickIn(o, key, label, kind, listId, list, q, hint) {
+  const input = el("input", {
+    type: "text", list: listId, class: "mono", placeholder: "0 — none", value: idToLabel(kind, o[key]),
+    onchange: (e) => { o[key] = labelToId(e.target.value); e.target.value = idToLabel(kind, o[key]); q.Objectives = writeStructArray(list); touch(false); }
+  });
+  return field(label, hint, input);
+}
+/* Item/Weapon/Armor Tracking are structs: {Item:"3", Amount:"2"} */
+function fStructPick(o, key, label, innerKey, kind, listId, list, q) {
+  const cur = readStruct(o[key]) || {};
+  const wrap = el("div", { class: "f" }, el("label", { text: label }));
+  const row = el("div", { class: "linerow" });
+  const pick = el("input", {
+    type: "text", list: listId, class: "mono", placeholder: "none", value: idToLabel(kind, cur[innerKey]),
+    onchange: (e) => {
+      const id = labelToId(e.target.value);
+      e.target.value = idToLabel(kind, id);
+      if (Number(id) > 0) { cur[innerKey] = id; cur.Amount = cur.Amount || "1"; o[key] = writeStruct(cur); }
+      else { o[key] = ""; }
+      q.Objectives = writeStructArray(list); touch(false); renderDetail();
+    }
+  });
+  const amt = el("input", {
+    type: "number", min: 0, value: cur.Amount || "0", style: "max-width:88px",
+    oninput: (e) => { cur.Amount = String(e.target.value || 0); if (cur[innerKey]) { o[key] = writeStruct(cur); q.Objectives = writeStructArray(list); touch(false); } }
+  });
+  row.appendChild(pick); row.appendChild(amt);
+  wrap.appendChild(row);
+  wrap.appendChild(el("span", { class: "hint", text: "Item, then how many." }));
+  return wrap;
+}
+
+/* ---------- descriptions ---------- */
+function renderDescriptions(q) {
+  const lines = readStringArray(q.Description);
+  const commit = () => { q.Description = writeStringArray(lines); touch(false); };
+  const body = el("div", {});
+
+  body.appendChild(el("h3", { class: "mini", text: "Main description — one entry per stage" }));
+  if (!lines.length) body.appendChild(el("div", { class: "empty", text: "No description yet." }));
+  lines.forEach((line, i) => {
+    const card = el("div", { class: "item" });
+    card.appendChild(el("div", { class: "itemhead" },
+      el("span", { class: "n", text: "Stage " + (i + 1) }),
+      el("span", { class: "t" }),
+      el("button", { class: "btn sm danger", type: "button", onclick: () => { lines.splice(i, 1); commit(); renderDetail(); } }, "Remove")
+    ));
+    const ta = el("textarea", { oninput: (e) => { lines[i] = e.target.value; commit(); } });
+    ta.value = line;
+    card.appendChild(ta);
+    body.appendChild(card);
+  });
+  body.appendChild(el("button", {
+    class: "btn", type: "button",
+    onclick: () => { lines.push(""); commit(); renderDetail(); }
+  }, "+ Add a stage description"));
+
+  body.appendChild(el("div", { class: "divider" }));
+  body.appendChild(el("div", { class: "grid two" },
+    fArea(q, "Unstarted Description", "Before accepting", { hint: "Shown while discovered but not started." }),
+    fArea(q, "Unstarted Objective", "Objectives placeholder", { hint: "Stands in for the objective list before accepting." }),
+    fArea(q, "Completed Description", "After completing", { hint: "Replaces the description once done." }),
+    fArea(q, "Failed Description", "After failing", null),
+    fArea(q, "Board Description", "On a quest board", { hint: "The short pitch on the board scene." })
+  ));
+  return section("Description", "Text codes work here — \\c[3] for colour, \\v[1] for a variable", body);
+}
+
+/* ---------- rewards ---------- */
+function renderRewards(q) {
+  const body = el("div", {});
+  body.appendChild(el("div", { class: "grid" },
+    fNum(q, "Reward Gold", "Gold"),
+    fNum(q, "Reward Exp", "Experience"),
+    fPick(q, "Reward Common Event", "Common event", "commonEvents", "dl-commonevents", { hint: "Runs on completion." }),
+    fBool(q, "Hide Reward Gold", "Hide the gold", "Still paid, just not listed."),
+    fBool(q, "Hide Reward Exp", "Hide the experience", "Still paid, just not listed.")
+  ));
+  body.appendChild(el("div", { class: "divider" }));
+  body.appendChild(rewardList(q, "Reward Items", "Items", "Item", "items", "dl-items"));
+  body.appendChild(rewardList(q, "Reward Weapons", "Weapons", "Weapon", "weapons", "dl-weapons"));
+  body.appendChild(rewardList(q, "Reward Armors", "Armour", "Armor", "armors", "dl-armors"));
+  body.appendChild(el("div", { class: "divider" }));
+
+  const custom = readStringArray(q["Reward Custom"]);
+  const commitC = () => { q["Reward Custom"] = writeStringArray(custom); touch(false); };
+  body.appendChild(el("h3", { class: "mini", text: "Custom reward lines" }));
+  body.appendChild(el("div", { class: "hint", style: "font-size:11.5px;color:var(--ink-4);margin-bottom:8px" },
+    "Displayed to the player but NOT given automatically — you hand these over yourself."));
+  custom.forEach((line, i) => {
+    const row = el("div", { class: "linerow", style: "margin-bottom:8px" });
+    row.appendChild(el("input", {
+      type: "text", value: line, style: "flex:1;background:var(--surface-2);border:1px solid var(--line);border-radius:7px;padding:7px 10px;font:inherit;font-size:13px;color:var(--ink)",
+      oninput: (e) => { custom[i] = e.target.value; commitC(); }
+    }));
+    row.appendChild(el("button", { class: "btn sm danger", type: "button", onclick: () => { custom.splice(i, 1); commitC(); renderDetail(); } }, "×"));
+    body.appendChild(row);
+  });
+  body.appendChild(el("button", { class: "btn", type: "button", onclick: () => { custom.push(""); commitC(); renderDetail(); } }, "+ Add custom reward"));
+  return section("Rewards", "Gold, exp, items and the common event are paid out automatically", body);
+}
+
+function rewardList(q, key, label, innerKey, kind, listId) {
+  const list = readStructArray(q[key]);
+  const commit = () => { q[key] = writeStructArray(list); touch(false); };
+  const box = el("div", { style: "margin-bottom:14px" });
+  box.appendChild(el("h3", { class: "mini", text: label }));
+  list.forEach((r, i) => {
+    const row = el("div", { class: "linerow", style: "margin-bottom:8px;align-items:center" });
+    row.appendChild(el("input", {
+      type: "text", list: listId, class: "mono",
+      style: "flex:1;background:var(--surface-2);border:1px solid var(--line);border-radius:7px;padding:7px 10px;font-size:12.5px;color:var(--ink)",
+      value: idToLabel(kind, r[innerKey]),
+      onchange: (e) => { r[innerKey] = labelToId(e.target.value); e.target.value = idToLabel(kind, r[innerKey]); commit(); }
+    }));
+    row.appendChild(el("input", {
+      type: "number", min: 0, value: r.Amount || "1",
+      style: "width:84px;background:var(--surface-2);border:1px solid var(--line);border-radius:7px;padding:7px 10px;font:inherit;font-size:13px;color:var(--ink)",
+      oninput: (e) => { r.Amount = String(e.target.value || 0); commit(); }
+    }));
+    const hid = el("input", { type: "checkbox", onchange: (e) => { r.Hidden = e.target.checked ? "true" : "false"; commit(); } });
+    hid.checked = r.Hidden === "true";
+    row.appendChild(el("label", { class: "check", title: "Hidden from the reward list" }, hid, el("span", { text: "hide" })));
+    row.appendChild(el("button", { class: "btn sm danger", type: "button", onclick: () => { list.splice(i, 1); commit(); renderDetail(); } }, "×"));
+    box.appendChild(row);
+  });
+  box.appendChild(el("button", {
+    class: "btn sm", type: "button",
+    onclick: () => {
+      const o = { Amount: "1", Hidden: "false" }; o[innerKey] = "1";
+      list.push(o); commit(); renderDetail();
+    }
+  }, "+ Add " + label.toLowerCase()));
+  return box;
+}
+
+/* ---------- which events use this quest ---------- */
+function renderRefs(q) {
+  const body = el("div", {});
+  if (!S.scanned) {
+    body.appendChild(el("div", { class: "empty", text: "Open the project as a folder to scan events for references to this quest." }));
+    return section("Used by events", null, body);
+  }
+  const refs = questReferences(q.Name);
+  if (!refs.total) {
+    body.appendChild(el("div", { class: "empty", html:
+      "No event calls this quest by name.<br><span style='font-size:12px'>Either it isn't wired up yet, or an event is using an older name — check the Check tab.</span>" }));
+  } else {
+    const line = (title, detail) => el("div", { class: "issue" },
+      el("div", { class: "ic", style: "background:var(--indigo-wash);color:var(--indigo);border:1px solid var(--indigo-line)", text: "•" }),
+      el("div", { class: "body" },
+        el("div", { class: "t", text: title }),
+        el("div", { class: "d", html: detail })
+      )
+    );
+    for (const r of refs.events) body.appendChild(line(r.where, "<code>" + escapeHtml(r.command) + "</code>"));
+    for (const r of refs.scripts) body.appendChild(line(r.where, "<code>script call</code>"));
+  }
+  return section("Used by events", refs.total ? refs.total + " reference" + (refs.total > 1 ? "s" : "") : null, body);
+}
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+/* ===========================================================
+   Game assets — the real window frame, icons, palette and font
+   straight out of the project, so previews look like the game.
+   =========================================================== */
+const ART = {
+  skin: null,        // img/system/Window.png
+  icons: null,       // img/system/IconSet.png
+  iconsUrl: "",      // kept alive so CSS can show the icon grid
+  palette: null,     // 32 windowskin text colours
+  overlay: null,     // tiled overlay pattern canvas
+  fontReady: false,
+  screenW: 816, screenH: 624,
+  fontSize: 26, windowOpacity: 192,
+  loaded: false,
+};
+
+/* Fallback palette, close to the stock MZ windowskin, used when we have
+   no project folder to read the real one from. */
+const FALLBACK_PALETTE = [
+  "#ffffff","#20a0d6","#ff784c","#66cc40","#99ccff","#ffffa0","#ff40ff","#808080",
+  "#c0c0c0","#2080cc","#ff9910","#00bb00","#40c0f0","#e0e020","#f060f0","#c0c0c0",
+  "#40c0f0","#ff4040","#40ff40","#4040ff","#ffff40","#40ffff","#ff40ff","#a0a0a0",
+  "#6e6e6e","#c04040","#40c040","#4040c0","#c0c040","#40c0c0","#c040c0","#a060e0"
+];
+
+function loadImageFromBlob(blob, keepUrl) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(blob);
+    const img = new Image();
+    img.onload = () => { if (!keepUrl) URL.revokeObjectURL(url); img.objectUrl = url; resolve(img); };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("image failed")); };
+    img.src = url;
+  });
+}
+
+async function loadGameArt(dir) {
+  ART.loaded = false;
+  try {
+    const sys = await readJsonIfPresent(dir, "System.json");
+    if (sys && sys.advanced) {
+      ART.screenW = sys.advanced.screenWidth || 816;
+      ART.screenH = sys.advanced.screenHeight || 624;
+      ART.fontSize = sys.advanced.fontSize || 26;
+      ART.windowOpacity = sys.advanced.windowOpacity != null ? sys.advanced.windowOpacity : 192;
+    }
+    const imgDir = await (await dir.getDirectoryHandle("img")).getDirectoryHandle("system");
+    ART.skin = await loadImageFromBlob(await (await imgDir.getFileHandle("Window.png")).getFile());
+    try {
+      if (ART.iconsUrl) URL.revokeObjectURL(ART.iconsUrl);
+      ART.icons = await loadImageFromBlob(await (await imgDir.getFileHandle("IconSet.png")).getFile(), true);
+      ART.iconsUrl = ART.icons.objectUrl;
+    } catch (e) { ART.icons = null; ART.iconsUrl = ""; }
+    ART.palette = extractPalette(ART.skin);
+    ART.overlay = extractOverlay(ART.skin);
+    ART.loaded = true;
+
+    /* the game's own font, so text metrics match */
+    try {
+      const fname = (sys && sys.advanced && sys.advanced.mainFontFilename) || "";
+      if (fname && window.FontFace) {
+        const fdir = await dir.getDirectoryHandle("fonts");
+        const buf = await (await (await fdir.getFileHandle(fname)).getFile()).arrayBuffer();
+        const face = new FontFace("QFGameFont", buf);
+        await face.load();
+        document.fonts.add(face);
+        ART.fontReady = true;
+      }
+    } catch (e) { ART.fontReady = false; }
+  } catch (e) {
+    ART.skin = null; ART.icons = null; ART.palette = null; ART.loaded = false;
+  }
+}
+
+/* MZ stores 32 text colours in a grid at the bottom-right of the windowskin:
+   colour n sits at (96 + (n%8)*12 + 6, 144 + floor(n/8)*12 + 6). */
+function extractPalette(skin) {
+  try {
+    const c = document.createElement("canvas");
+    c.width = skin.width; c.height = skin.height;
+    const g = c.getContext("2d", { willReadFrequently: true });
+    g.drawImage(skin, 0, 0);
+    const out = [];
+    for (let n = 0; n < 32; n++) {
+      const x = 96 + (n % 8) * 12 + 6;
+      const y = 144 + Math.floor(n / 8) * 12 + 6;
+      const d = g.getImageData(x, y, 1, 1).data;
+      out.push("rgb(" + d[0] + "," + d[1] + "," + d[2] + ")");
+    }
+    return out;
+  } catch (e) { return null; }
+}
+function extractOverlay(skin) {
+  try {
+    const c = document.createElement("canvas");
+    c.width = 96; c.height = 96;
+    c.getContext("2d").drawImage(skin, 0, 96, 96, 96, 0, 0, 96, 96);
+    return c;
+  } catch (e) { return null; }
+}
+function paletteColor(n) {
+  const i = Math.max(0, Math.min(31, Number(n) || 0));
+  return (ART.palette || FALLBACK_PALETTE)[i] || "#ffffff";
+}
+function gameFont(size, bold) {
+  const fam = ART.fontReady ? "QFGameFont, Verdana, sans-serif" : "Verdana, Segoe UI, sans-serif";
+  return (bold ? "bold " : "") + (size || ART.fontSize) + "px " + fam;
+}
+
+/* ===========================================================
+   Drawing a real RPG Maker window onto a canvas
+   =========================================================== */
+const WIN_PAD = 12, LINE_H = 36, ITEM_PAD = 8;
+
+function drawWindow(g, x, y, w, h, style) {
+  style = style || "Window";
+  if (style === "Transparent") return;
+  if (style === "Dim" || !ART.skin) {
+    const grad = g.createLinearGradient(x, y, x, y + h);
+    const c1 = "rgba(0,0,0,.6)", c2 = "rgba(0,0,0,.0)";
+    grad.addColorStop(0, c2); grad.addColorStop(.12, c1);
+    grad.addColorStop(.88, c1); grad.addColorStop(1, c2);
+    g.fillStyle = ART.skin && style === "Dim" ? grad : "rgba(12,16,24,.82)";
+    g.fillRect(x, y, w, h);
+    if (!ART.skin) { g.strokeStyle = "rgba(200,210,230,.5)"; g.lineWidth = 2; g.strokeRect(x + 1, y + 1, w - 2, h - 2); }
+    return;
+  }
+  const skin = ART.skin;
+  /* background, at the game's window opacity */
+  g.save();
+  g.globalAlpha = ART.windowOpacity / 255;
+  g.drawImage(skin, 0, 0, 95, 95, x + 4, y + 4, Math.max(0, w - 8), Math.max(0, h - 8));
+  if (ART.overlay) {
+    const pat = g.createPattern(ART.overlay, "repeat");
+    if (pat) {
+      g.save();
+      g.beginPath(); g.rect(x + 4, y + 4, Math.max(0, w - 8), Math.max(0, h - 8)); g.clip();
+      g.translate(x + 4, y + 4);
+      g.fillStyle = pat; g.fillRect(0, 0, Math.max(0, w - 8), Math.max(0, h - 8));
+      g.restore();
+    }
+  }
+  g.restore();
+  /* 9-slice frame from (96,0,96,96), 24px corners */
+  const m = 24, sx = 96, sy = 0, ss = 96, si = ss - m * 2;
+  const di = { w: Math.max(0, w - m * 2), h: Math.max(0, h - m * 2) };
+  g.drawImage(skin, sx, sy, m, m, x, y, m, m);
+  g.drawImage(skin, sx + ss - m, sy, m, m, x + w - m, y, m, m);
+  g.drawImage(skin, sx, sy + ss - m, m, m, x, y + h - m, m, m);
+  g.drawImage(skin, sx + ss - m, sy + ss - m, m, m, x + w - m, y + h - m, m, m);
+  if (di.w > 0) {
+    g.drawImage(skin, sx + m, sy, si, m, x + m, y, di.w, m);
+    g.drawImage(skin, sx + m, sy + ss - m, si, m, x + m, y + h - m, di.w, m);
+  }
+  if (di.h > 0) {
+    g.drawImage(skin, sx, sy + m, m, si, x, y + m, m, di.h);
+    g.drawImage(skin, sx + ss - m, sy + m, m, si, x + w - m, y + m, m, di.h);
+  }
+}
+
+function drawIcon(g, index, x, y, size) {
+  const n = Number(index) || 0;
+  if (!n || !ART.icons) return;
+  const s = 32;
+  g.drawImage(ART.icons, (n % 16) * s, Math.floor(n / 16) * s, s, s, x, y, size || s, size || s);
+}
+
+/* Parse a string with RPG Maker text codes into drawable runs. */
+function parseCodes(text, startColor) {
+  const runs = [];
+  let color = Number(startColor) || 0, i = 0;
+  const s = String(text == null ? "" : text);
+  let buf = "";
+  const push = () => { if (buf) { runs.push({ t: "text", v: buf, c: color }); buf = ""; } };
+  while (i < s.length) {
+    const ch = s[i];
+    if (ch === "\\") {
+      const rest = s.slice(i + 1);
+      let m;
+      if ((m = rest.match(/^[cC]\[(\d+)\]/))) { push(); color = Number(m[1]); i += 1 + m[0].length; continue; }
+      if ((m = rest.match(/^[iI]\[(\d+)\]/))) { push(); runs.push({ t: "icon", v: Number(m[1]) }); i += 1 + m[0].length; continue; }
+      if ((m = rest.match(/^[vV]\[(\d+)\]/))) { buf += "\\v[" + m[1] + "]"; i += 1 + m[0].length; continue; }
+      if ((m = rest.match(/^[nN]\[(\d+)\]/))) { buf += "(actor)"; i += 1 + m[0].length; continue; }
+      if (rest[0] === "$" || rest[0] === ".") { i += 2; continue; }
+      buf += ch; i++; continue;
+    }
+    buf += ch; i++;
+  }
+  push();
+  runs.endColor = color;   // so a wrapped paragraph can carry colour to the next line
+  return runs;
+}
+function measureRuns(g, runs, size) {
+  g.font = gameFont(size);
+  let w = 0;
+  for (const r of runs) w += r.t === "icon" ? size + 4 : g.measureText(r.v).width;
+  return w;
+}
+function drawRuns(g, runs, x, y, size, align, boxW) {
+  const total = measureRuns(g, runs, size);
+  /* CGMZ squeezes a line horizontally rather than letting it spill out
+     of the window, so do the same here. */
+  const scale = total > boxW && boxW > 0 ? boxW / total : 1;
+  g.save();
+  if (scale < 1) { g.translate(x, 0); g.scale(scale, 1); g.translate(-x, 0); }
+  const shown = total * scale;
+  let cx = x;
+  if (align === "center") cx = x + (boxW - shown) / 2 / scale;
+  else if (align === "right") cx = x + (boxW - shown) / scale;
+  g.font = gameFont(size);
+  g.textBaseline = "middle";
+  for (const r of runs) {
+    if (r.t === "icon") { drawIcon(g, r.v, cx, y - size / 2 - 2, size); cx += size + 4; }
+    else {
+      g.fillStyle = paletteColor(r.c);
+      g.strokeStyle = "rgba(0,0,0,.55)"; g.lineWidth = 4; g.lineJoin = "round";
+      g.strokeText(r.v, cx, y);
+      g.fillText(r.v, cx, y);
+      cx += g.measureText(r.v).width;
+    }
+  }
+  g.restore();
+}
+
+/* ===========================================================
+   Previews — draw the thing the way the game will draw it
+   =========================================================== */
+
+/* A mock game screen at the project's real resolution, scaled to fit. */
+function makeScreen(maxW) {
+  const scale = Math.min(1, (maxW || 560) / ART.screenW);
+  const wrap = el("div", { class: "screenmock", style:
+    "width:" + Math.round(ART.screenW * scale) + "px;height:" + Math.round(ART.screenH * scale) + "px" });
+  const cv = el("canvas", { width: ART.screenW, height: ART.screenH });
+  wrap.appendChild(cv);
+  return { wrap: wrap, canvas: cv, g: cv.getContext("2d"), scale: scale };
+}
+
+/* faint stand-in for the map behind the window */
+function drawBackdrop(g) {
+  const grad = g.createLinearGradient(0, 0, 0, ART.screenH);
+  grad.addColorStop(0, "#1d2633"); grad.addColorStop(1, "#0d1219");
+  g.fillStyle = grad; g.fillRect(0, 0, ART.screenW, ART.screenH);
+  g.strokeStyle = "rgba(255,255,255,.035)"; g.lineWidth = 1;
+  for (let x = 0; x < ART.screenW; x += 48) { g.beginPath(); g.moveTo(x + .5, 0); g.lineTo(x + .5, ART.screenH); g.stroke(); }
+  for (let y = 0; y < ART.screenH; y += 48) { g.beginPath(); g.moveTo(0, y + .5); g.lineTo(ART.screenW, y + .5); g.stroke(); }
+  g.fillStyle = "rgba(255,255,255,.06)";
+  g.font = "italic 18px Verdana, sans-serif"; g.textBaseline = "top";
+  g.fillText("your map here", 16, 14);
+}
+
+/* ---------- pop-up message preview ---------- */
+function popupGeometry(preset, globals) {
+  const wpx = Number(preset.Width) || Number(globals.width) || 360;
+  const lines = Number(preset.Height) || Number(globals.height) || 2;
+  const h = lines * LINE_H + WIN_PAD * 2;
+  let x;
+  const align = globals.align || "center";
+  if (align === "left") x = 0;
+  else if (align === "right") x = ART.screenW - wpx;
+  else x = (ART.screenW - wpx) / 2;
+  x += Number(globals.xOffset) || 0;
+  const y = globals.fromBottom ? ART.screenH - h - 24 : 24;
+  return { x: Math.round(x), y: Math.round(y), w: wpx, h: h, lines: lines };
+}
+
+function drawPopup(g, preset, globals, questName) {
+  const geo = popupGeometry(preset, globals);
+  const type = preset.Type || "Text";
+  const style = type === "Image" && preset["Show Background"] !== "true" ? "Transparent" : (preset["Background Style"] || "Window");
+  drawWindow(g, geo.x, geo.y, geo.w, geo.h, style);
+
+  const sub = (s) => String(s == null ? "" : s).replace(/%questname/g, questName || "Quest Name");
+  const innerX = geo.x + WIN_PAD, innerW = geo.w - WIN_PAD * 2;
+
+  if (type === "Text") {
+    const l1 = sub(preset["Text Line 1"]), l2 = sub(preset["Text Line 2"]);
+    if (l1) {
+      const runs = parseCodes(l1);
+      if (Number(preset["Text Line 1 Color"])) runs.forEach((r) => { if (r.t === "text" && !r.c) r.c = Number(preset["Text Line 1 Color"]); });
+      drawRuns(g, runs, innerX, geo.y + WIN_PAD + LINE_H / 2, ART.fontSize, preset["Text Line 1 Alignment"] || "center", innerW);
+    }
+    if (l2 && geo.lines > 1) {
+      const runs = parseCodes(l2);
+      if (Number(preset["Text Line 2 Color"])) runs.forEach((r) => { if (r.t === "text" && !r.c) r.c = Number(preset["Text Line 2 Color"]); });
+      drawRuns(g, runs, innerX, geo.y + WIN_PAD + LINE_H + LINE_H / 2, ART.fontSize, preset["Text Line 2 Alignment"] || "center", innerW);
+    }
+  } else if (type === "Paragraph") {
+    let y = geo.y + WIN_PAD + LINE_H / 2;
+    const head = sub(preset["Header Line"]);
+    if (head) {
+      drawRuns(g, parseCodes(head), innerX, y, ART.fontSize, "center", innerW);
+      if (preset["Header Dividers"] === "true") {
+        const gy = y + LINE_H / 2 - 2;
+        const grad = g.createLinearGradient(innerX, 0, innerX + innerW, 0);
+        grad.addColorStop(0, paletteColor(preset["Header Divider Color 1"]));
+        grad.addColorStop(1, paletteColor(preset["Header Divider Color 2"]));
+        g.fillStyle = grad; g.fillRect(innerX, gy, innerW, 2);
+      }
+      y += LINE_H;
+    }
+    let carry = 0;
+    for (const line of wrapText(g, sub(preset.Paragraph), innerW, ART.fontSize)) {
+      const runs = parseCodes(line, carry);
+      carry = runs.endColor;
+      drawRuns(g, runs, innerX, y, ART.fontSize, preset["Paragraph Alignment"] || "center", innerW);
+      y += LINE_H;
+    }
+  } else {
+    g.fillStyle = "rgba(255,255,255,.10)";
+    g.fillRect(geo.x + 12, geo.y + 12, geo.w - 24, geo.h - 24);
+    g.fillStyle = "rgba(255,255,255,.6)";
+    g.font = "16px Verdana, sans-serif"; g.textBaseline = "middle"; g.textAlign = "center";
+    g.fillText(preset.Image ? preset.Image : "(no image chosen)", geo.x + geo.w / 2, geo.y + geo.h / 2);
+    g.textAlign = "left";
+  }
+  return geo;
+}
+
+function wrapText(g, text, maxW, size) {
+  g.font = gameFont(size);
+  const out = [];
+  for (const para of String(text || "").split("\n")) {
+    let line = "";
+    for (const word of para.split(" ")) {
+      const t = line ? line + " " + word : word;
+      if (g.measureText(t.replace(/\\[a-zA-Z]\[\d+\]/g, "")).width > maxW && line) { out.push(line); line = word; }
+      else line = t;
+    }
+    out.push(line);
+  }
+  return out.slice(0, 8);
+}
+
+function popupPreview(preset) {
+  const globals = toastGlobals();
+  const wrap = el("div", {});
+  const scr = makeScreen(560);
+  const nameInput = el("input", {
+    type: "text", value: S.quests.length ? (S.quests[S.qSel] || S.quests[0]).Name : "Legendary Cheesecake",
+    style: "flex:1;min-width:120px;background:var(--surface-2);border:1px solid var(--line);border-radius:7px;padding:5px 9px;font:inherit;font-size:12.5px;color:var(--ink)"
+  });
+  let anim = null;
+  const paint = (alpha) => {
+    const g = scr.g;
+    g.clearRect(0, 0, ART.screenW, ART.screenH);
+    drawBackdrop(g);
+    g.save();
+    if (alpha !== undefined) g.globalAlpha = alpha;
+    drawPopup(g, preset, globals, nameInput.value);
+    g.restore();
+  };
+  const play = () => {
+    if (anim) cancelAnimationFrame(anim);
+    const total = (Number(preset["Display Time"]) || Number(globals.displayTime) || 240) / 60 * 1000;
+    const start = performance.now();
+    const step = (now) => {
+      const t = now - start;
+      let a = 1;
+      if (t < 250) a = t / 250;
+      else if (t > total - 400) a = Math.max(0, (total - t) / 400);
+      paint(a);
+      if (t < total) anim = requestAnimationFrame(step);
+      else { anim = null; paint(1); }
+    };
+    anim = requestAnimationFrame(step);
+  };
+  nameInput.addEventListener("input", () => paint());
+  PREVIEW_REFRESH = () => paint();
+  wrap.appendChild(el("div", { class: "previewbar" },
+    el("button", { class: "btn sm", type: "button", onclick: play }, "▶ Play it"),
+    el("span", { style: "font-size:12px;color:var(--ink-3)", text: "Quest name:" }),
+    nameInput
+  ));
+  wrap.appendChild(el("div", { class: "previewwrap" }, scr.wrap));
+  wrap.appendChild(el("div", { class: "previewnote", text:
+    (ART.loaded ? "Drawn with your game's own window frame, icons and font at " + ART.screenW + "×" + ART.screenH + "."
+                : "Approximate — open the project as a folder to preview with your real window frame and font.") +
+    " Where it sits and how long it stays come from the pop-up plugin's own settings." }));
+  paint();
+  return wrap;
+}
+
+/* the plugin-wide pop-up settings that individual messages inherit */
+function toastGlobals() {
+  const p = (S.tmIndex >= 0 && S.plugins[S.tmIndex].parameters) || {};
+  return {
+    width: p["Width"] || "360",
+    height: p["Height"] || "2",
+    displayTime: p["Display Time"] || "240",
+    align: p["Display Alignment"] || "center",
+    xOffset: p["X Offset"] || "0",
+    fromBottom: (p["Display From Bottom"] || "true") === "true",
+  };
+}
+
+/* ---------- quest preview ---------- */
+function questPreview(q) {
+  let objs = readStructArray(q.Objectives);
+  const stages = [...new Set(objs.map((o) => Number(o.Stage) || 1))].sort((a, b) => a - b);
+  let stage = stages[0] || 1;
+  let done = false;
+  let view = "tracker";
+
+  const scr = makeScreen(560);
+  const holder = el("div", { class: "previewwrap" }, scr.wrap);
+
+  const paint = () => {
+    const g = scr.g;
+    g.clearRect(0, 0, ART.screenW, ART.screenH);
+    drawBackdrop(g);
+    if (view === "tracker") drawTracker(g, q, objs, stage, done);
+    else drawLogEntry(g, q, objs, stage, done);
+  };
+
+  const seg = el("div", { class: "seg" });
+  const mk = (id, label) => {
+    const b = el("button", { type: "button", "aria-pressed": String(view === id), text: label,
+      onclick: () => { view = id; for (const x of seg.children) x.setAttribute("aria-pressed", String(x === b)); paint(); } });
+    seg.appendChild(b); return b;
+  };
+  mk("tracker", "On-map tracker");
+  mk("log", "Quest log");
+
+  const stageSel = el("select", {
+    style: "background:var(--surface-2);border:1px solid var(--line);border-radius:7px;padding:4px 8px;font:inherit;font-size:12.5px;color:var(--ink)",
+    onchange: (e) => { stage = Number(e.target.value); paint(); }
+  }, (stages.length ? stages : [1]).map((s) => el("option", { value: String(s), text: "Stage " + s })));
+
+  const doneCb = el("input", { type: "checkbox", onchange: (e) => { done = e.target.checked; paint(); } });
+
+  const bar = el("div", { class: "previewbar" }, seg, stageSel,
+    el("label", { class: "check" }, doneCb, el("span", { text: "show as completed" })));
+
+  paint();
+  PREVIEW_REFRESH = () => {
+    const st = [...new Set(readStructArray(q.Objectives).map((o) => Number(o.Stage) || 1))].sort((a, b) => a - b);
+    objs = readStructArray(q.Objectives);
+    if (!st.includes(stage)) stage = st[0] || 1;
+    paint();
+  };
+  return el("div", {}, bar, holder, el("div", { class: "previewnote", text:
+    ART.loaded ? "Uses your real window frame, icons and font. Layout is a close approximation, not a pixel-exact copy of the plugin's scene."
+               : "Approximate. Open the project as a folder to draw this with your game's real window frame and font." }));
+}
+
+function objectiveLines(objs, stage) {
+  return objs.filter((o) => (Number(o.Stage) || 1) <= stage);
+}
+
+function drawTracker(g, q, objs, stage, done) {
+  const p = S.plugins[S.qsIndex].parameters || {};
+  const w = Number(p["Quest Tracker Width"]) || 360;
+  const x = Number(p["Quest Tracker X"]) || 448;
+  const y = Number(p["Quest Tracker Y"]) || 52;
+  const list = objectiveLines(objs, stage);
+  const h = WIN_PAD * 2 + LINE_H * (1 + Math.max(1, list.length));
+  drawWindow(g, x, y, w, h);
+  let cy = y + WIN_PAD + LINE_H / 2;
+  drawRuns(g, parseCodes(q.Name || "(unnamed quest)"), x + WIN_PAD, cy, ART.fontSize, "left", w - WIN_PAD * 2);
+  cy += LINE_H;
+  if (!list.length) {
+    g.fillStyle = "rgba(255,255,255,.5)"; g.font = gameFont(ART.fontSize - 4); g.textBaseline = "middle";
+    g.fillText("(no objectives at this stage)", x + WIN_PAD, cy);
+    return;
+  }
+  for (const o of list) {
+    drawObjectiveRow(g, o, x + WIN_PAD, cy, w - WIN_PAD * 2, done, p);
+    cy += LINE_H;
+  }
+}
+
+function drawObjectiveRow(g, o, x, y, w, done, p) {
+  const size = Number(p["Objective Rect Size"]) || 28;
+  const icon = done ? (Number(p["Objective Complete Icon"]) || 164) : 0;
+  g.strokeStyle = "rgba(255,255,255,.55)"; g.lineWidth = 2;
+  g.strokeRect(x + 1, y - size / 2 + 1, size - 2, size - 2);
+  if (icon) drawIcon(g, icon, x, y - size / 2, size);
+  const text = o.Description || "(no description)";
+  const max = Number(o["Max Progress"]) || 0;
+  const suffix = max > 0 ? "  " + (done ? max : 0) + " / " + max : "";
+  drawRuns(g, parseCodes(text + suffix), x + size + 8, y, ART.fontSize - 2, "left", w - size - 8);
+}
+
+function drawLogEntry(g, q, objs, stage, done) {
+  const p = S.plugins[S.qsIndex].parameters || {};
+  const x = 24, y = 24, w = ART.screenW - 48, h = ART.screenH - 48;
+  drawWindow(g, x, y, w, h);
+  const ix = x + WIN_PAD + 8, iw = w - WIN_PAD * 2 - 16;
+  let cy = y + WIN_PAD + LINE_H / 2;
+
+  drawRuns(g, parseCodes(q.Name || "(unnamed quest)"), ix, cy, ART.fontSize + 4, "left", iw);
+  cy += LINE_H;
+
+  const label = (t) => {
+    g.fillStyle = paletteColor(p["Label Text Color"] || 1);
+    g.font = gameFont(ART.fontSize - 2); g.textBaseline = "middle";
+    g.strokeStyle = "rgba(0,0,0,.55)"; g.lineWidth = 4; g.lineJoin = "round";
+    g.strokeText(t, ix, cy); g.fillText(t, ix, cy);
+  };
+  const divider = () => {
+    const grad = g.createLinearGradient(ix, 0, ix + iw, 0);
+    grad.addColorStop(0, paletteColor(p["Header Gradient Color 1"] || 0));
+    grad.addColorStop(1, paletteColor(p["Header Gradient Color 2"] || 1));
+    g.fillStyle = grad; g.fillRect(ix, cy + LINE_H / 2 - 3, iw, 2);
+  };
+
+  if (q["Quest Giver"]) {
+    label(p["Quest Giver Text"] || "Quest Giver:");
+    drawRuns(g, parseCodes(q["Quest Giver"]), ix + 190, cy, ART.fontSize - 2, "left", iw - 190);
+    cy += LINE_H;
+  }
+  label(p["Description Text"] || "Description"); divider(); cy += LINE_H;
+
+  const descs = readStringArray(q.Description);
+  const text = done && q["Completed Description"] ? q["Completed Description"]
+    : (descs[stage - 1] || descs[descs.length - 1] || "(no description for this stage)");
+  let carry = 0;
+  for (const line of wrapText(g, text, iw, ART.fontSize - 2)) {
+    const runs = parseCodes(line, carry);
+    carry = runs.endColor;
+    drawRuns(g, runs, ix, cy, ART.fontSize - 2, "left", iw);
+    cy += LINE_H - 4;
+  }
+  cy += 8;
+
+  label(p["Objectives Text"] || "Objectives"); divider(); cy += LINE_H;
+  const list = objectiveLines(objs, stage);
+  if (!list.length) {
+    g.fillStyle = "rgba(255,255,255,.5)"; g.font = gameFont(ART.fontSize - 4);
+    g.fillText("(no objectives at this stage)", ix, cy);
+    cy += LINE_H;
+  }
+  for (const o of list) { drawObjectiveRow(g, o, ix, cy, iw, done, p); cy += LINE_H; }
+  cy += 8;
+
+  const gold = Number(q["Reward Gold"]) || 0, exp = Number(q["Reward Exp"]) || 0;
+  const items = readStructArray(q["Reward Items"]).length + readStructArray(q["Reward Weapons"]).length + readStructArray(q["Reward Armors"]).length;
+  if (gold || exp || items) {
+    label(p["Rewards Text"] || "Rewards"); divider(); cy += LINE_H;
+    if (gold) { drawRuns(g, parseCodes((p["Gold Text"] || "Currency:") + " " + gold), ix, cy, ART.fontSize - 2, "left", iw); cy += LINE_H; }
+    if (exp) { drawRuns(g, parseCodes((p["Exp Text"] || "Experience:") + " " + exp), ix, cy, ART.fontSize - 2, "left", iw); cy += LINE_H; }
+    if (items) { drawRuns(g, parseCodes(items + " item" + (items > 1 ? "s" : "")), ix, cy, ART.fontSize - 2, "left", iw); }
+  }
+}
+
+/* ===========================================================
+   Visual pickers — click a colour or an icon instead of
+   remembering what number 164 is.
+   =========================================================== */
+
+/* 32 windowskin colours as clickable swatches */
+function fColorSwatch(obj, key, label, hint, onAfter) {
+  const grid = el("div", { class: "swatchgrid" });
+  const paint = () => {
+    for (const b of grid.children) b.setAttribute("aria-pressed", String(Number(b.dataset.n) === (Number(obj[key]) || 0)));
+  };
+  for (let n = 0; n < 32; n++) {
+    const b = el("button", {
+      class: "swatch", type: "button", title: "Colour " + n,
+      style: "background:" + paletteColor(n),
+      "aria-pressed": "false", "aria-label": "Colour " + n,
+      onclick: () => { obj[key] = String(n); paint(); touch(false); if (onAfter) onAfter(); }
+    });
+    b.dataset.n = n;
+    grid.appendChild(b);
+  }
+  paint();
+  const wrap = el("div", { class: "f" },
+    el("label", { text: label }),
+    grid,
+    el("span", { class: "hint", text: (hint ? hint + " " : "") + (ART.palette ? "Taken from your game's window frame." : "Approximate — open the project folder for the real colours.") })
+  );
+  return wrap;
+}
+
+/* icon grid, drawn from the project's IconSet */
+function fIconPicker(obj, key, label, hint, onAfter) {
+  const wrap = el("div", { class: "f" }, el("label", { text: label }));
+  const cur = () => Number(obj[key]) || 0;
+  const iconStyle = (n) => ART.icons
+    ? "background-image:url(" + ART.iconsUrl + ");background-position:" + (-(n % 16) * 32 + 2) + "px " + (-Math.floor(n / 16) * 32 + 2) + "px"
+    : "";
+  const btn = el("button", { class: "pickerbtn", type: "button" },
+    el("span", { class: "prev", style: iconStyle(cur()) }),
+    el("span", { class: "lbl", text: cur() ? "Icon " + cur() : "No icon (0)" })
+  );
+  const panel = el("div", { class: "iconpick", hidden: true });
+  let built = false;
+  const refresh = () => {
+    btn.querySelector(".prev").setAttribute("style", iconStyle(cur()));
+    btn.querySelector(".lbl").textContent = cur() ? "Icon " + cur() : "No icon (0)";
+  };
+  btn.addEventListener("click", () => {
+    panel.hidden = !panel.hidden;
+    if (!panel.hidden && !built) {
+      built = true;
+      const total = ART.icons ? Math.floor(ART.icons.height / 32) * 16 : 0;
+      if (!total) {
+        panel.appendChild(el("div", { class: "hint", style: "padding:8px", text:
+          "No IconSet loaded. Open the project as a folder to pick icons visually." }));
+      }
+      panel.appendChild(el("button", {
+        class: "iconcell", type: "button", title: "No icon", "aria-pressed": String(cur() === 0),
+        onclick: () => { obj[key] = "0"; refresh(); mark(); touch(false); if (onAfter) onAfter(); }
+      }, el("span", { style: "display:block;text-align:center;line-height:32px;font-size:11px;color:var(--ink-4)", text: "0" })));
+      for (let n = 1; n < total; n++) {
+        const c = el("button", {
+          class: "iconcell", type: "button", title: "Icon " + n, "aria-pressed": String(cur() === n),
+          style: iconStyle(n),
+          onclick: () => { obj[key] = String(n); refresh(); mark(); touch(false); if (onAfter) onAfter(); }
+        });
+        c.dataset.n = n;
+        panel.appendChild(c);
+      }
+    }
+  });
+  const mark = () => {
+    for (const c of panel.children) {
+      if (c.dataset && c.dataset.n !== undefined) c.setAttribute("aria-pressed", String(Number(c.dataset.n) === cur()));
+      else if (c.classList && c.classList.contains("iconcell")) c.setAttribute("aria-pressed", String(cur() === 0));
+    }
+  };
+  wrap.appendChild(btn);
+  wrap.appendChild(panel);
+  if (hint) wrap.appendChild(el("span", { class: "hint", text: hint }));
+  return wrap;
+}
+
+/* rgba(...) colour with an alpha slider, for the category header gradient */
+function parseRgba(s) {
+  const m = String(s || "").match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([\d.]+)\s*)?\)/i);
+  if (!m) return { r: 32, g: 32, b: 32, a: 0.5 };
+  return { r: +m[1], g: +m[2], b: +m[3], a: m[4] === undefined ? 1 : parseFloat(m[4]) };
+}
+function toHex(c) { return "#" + [c.r, c.g, c.b].map((v) => Math.max(0, Math.min(255, v)).toString(16).padStart(2, "0")).join(""); }
+function rgbaStr(c) { return "rgba(" + c.r + ", " + c.g + ", " + c.b + ", " + c.a + ")"; }
+
+function fRgba(obj, key, label, hint, onAfter) {
+  const c = parseRgba(obj[key]);
+  const swatch = el("input", { type: "color", value: toHex(c) });
+  const alpha = el("input", { type: "range", min: "0", max: "100", value: String(Math.round(c.a * 100)) });
+  const val = el("span", { class: "val", text: Math.round(c.a * 100) + "%" });
+  const commit = () => {
+    const hex = swatch.value;
+    c.r = parseInt(hex.slice(1, 3), 16); c.g = parseInt(hex.slice(3, 5), 16); c.b = parseInt(hex.slice(5, 7), 16);
+    c.a = Math.round(Number(alpha.value)) / 100;
+    val.textContent = Math.round(c.a * 100) + "%";
+    obj[key] = rgbaStr(c);
+    touch(false);
+    if (onAfter) onAfter();
+  };
+  swatch.addEventListener("input", commit);
+  alpha.addEventListener("input", commit);
+  return el("div", { class: "f" },
+    el("label", { text: label }),
+    el("div", { class: "rgbarow" }, swatch, alpha, val),
+    hint ? el("span", { class: "hint", text: hint }) : null
+  );
+}
+
+/* ===========================================================
+   Categories
+   =========================================================== */
+function renderCatList() {
+  const wrap = $("#cat-list"); wrap.textContent = "";
+  if (!S.categories.length) {
+    wrap.appendChild(el("div", { class: "empty", text: "No categories yet." }));
+    return;
+  }
+  S.categories.forEach((c, i) => {
+    const used = S.quests.filter((q) => q.Category === c.Name).length;
+    wrap.appendChild(el("button", {
+      class: "row", type: "button", "aria-current": String(i === S.catSel),
+      onclick: () => { S.catSel = i; renderList(); renderDetail(); }
+    },
+      el("div", { class: "name", text: c["Display Name"] || c.Name || "(unnamed)" }),
+      el("div", { class: "meta" },
+        el("span", { class: "chip", text: c.Type || "Category" }),
+        el("span", { class: used ? "chip on" : "chip", text: used + " quest" + (used === 1 ? "" : "s") })
+      )
+    ));
+  });
+}
+
+function renderCatDetail() {
+  const host = $("#cat-detail"); host.textContent = "";
+  const c = S.categories[S.catSel];
+  if (!c) { host.appendChild(el("div", { class: "empty", text: "Select a category, or create one." })); return; }
+
+  const bar = el("div", { class: "gradbar" }, el("div", { class: "fill" }));
+  const paintBar = () => {
+    bar.firstChild.style.background = "linear-gradient(90deg," + (c.Color1 || "rgba(32,32,32,.5)") + "," + (c.Color2 || "rgba(0,0,0,.5)") + ")";
+  };
+  paintBar();
+
+  host.appendChild(section("Category", "Quests reference this by Name — renaming orphans them",
+    el("div", { class: "grid" },
+      fText(c, "Name", "Name (id)", { live: true, hint: "Must match a quest's Category exactly." }),
+      fText(c, "Display Name", "Display name", { live: true, hint: "What the player sees." }),
+      fSelect(c, "Type", "Type", ["Category", "Difficulty", "Length", "Location"], { live: true }),
+      fBool(c, "Start Expanded", "Open by default", "Uncheck for long lists.")
+    ),
+    fArea(c, "Description", "Description", { hint: "Shown when the category header is selected." })
+  ));
+
+  host.appendChild(section("Look", "Colours for the category header in the quest log",
+    el("div", { class: "grid two" },
+      fRgba(c, "Color1", "Header colour, left", "Keep it partly see-through so the scene shows through.", paintBar),
+      fRgba(c, "Color2", "Header colour, right", null, paintBar)
+    ),
+    bar,
+    el("div", { class: "divider" }),
+    el("div", { class: "grid two" },
+      fIconPicker(c, "Icon", "Header icon", "Shown beside the category name."),
+      fColorSwatch(c, "Text Color", "Header text colour")
+    )
+  ));
+
+  const used = S.quests.filter((q) => q.Category === c.Name);
+  host.appendChild(section("Quests in this category", used.length + "",
+    used.length
+      ? el("div", { class: "stack" }, used.map((q) => el("div", { class: "chip", style: "padding:5px 9px;font-size:12px", text: q.Name })))
+      : el("div", { class: "empty", text: "No quests use this category yet." })
+  ));
+
+  host.appendChild(el("button", {
+    class: "btn danger", type: "button", onclick: () => {
+      if (used.length && !confirm("Delete \"" + c.Name + "\"? " + used.length + " quest(s) reference it and will be left with a missing category.")) return;
+      S.categories.splice(S.catSel, 1);
+      S.catSel = Math.max(0, S.catSel - 1);
+      touch(true); renderDetail();
+    }
+  }, "Delete category"));
+}
+
+/* ===========================================================
+   Toast presets
+   =========================================================== */
+function toastUsage(id) {
+  const keys = ["Discover Toast", "Start Toast", "Complete Toast", "Fail Toast", "Objective Complete Toast"];
+  const out = [];
+  for (const q of S.quests) for (const k of keys) if (q[k] === id) out.push(q.Name + " · " + k.replace(" Toast", ""));
+  return out;
+}
+
+function renderToastList() {
+  const wrap = $("#t-list"); wrap.textContent = "";
+  if (S.tmIndex < 0) {
+    wrap.appendChild(el("div", { class: "empty", text: "The pop-up plugin isn't in this project's plugin list." }));
+    return;
+  }
+  if (!S.toasts.length) {
+    wrap.appendChild(el("div", { class: "empty", text: "No pop-up messages yet. Quests can't show a notice until you make one." }));
+    return;
+  }
+  S.toasts.forEach((t, i) => {
+    const uses = toastUsage(t.Id).length;
+    wrap.appendChild(el("button", {
+      class: "row", type: "button", "aria-current": String(i === S.tSel),
+      onclick: () => { S.tSel = i; renderList(); renderDetail(); }
+    },
+      el("div", { class: "name mono", text: t.Id || "(no id)" }),
+      el("div", { class: "meta" },
+        el("span", { class: "chip", text: t.Type || "Text" }),
+        el("span", { class: uses ? "chip on" : "chip", text: uses ? uses + " use" + (uses > 1 ? "s" : "") : "unused" })
+      )
+    ));
+  });
+}
+
+function renderToastDetail() {
+  const host = $("#t-detail"); host.textContent = "";
+  if (S.tmIndex < 0) {
+    host.appendChild(el("div", { class: "empty", html:
+      "This project doesn't have the pop-up plugin (<b>CGMZ Toast Manager</b>) in its plugin list.<br>Add and enable it in RPG Maker, then reload here." }));
+    return;
+  }
+  const t = S.toasts[S.tSel];
+  if (!t) { host.appendChild(el("div", { class: "empty", text: "Select a preset, or create one." })); return; }
+
+  host.appendChild(section("Pop-up message", "The name is how quests refer to it",
+    el("p", { class: "sub-note", style: "margin:0 0 13px",
+      text: "These are the brief notices that slide in during play and fade out on their own. The CGMZ plugin and its documentation call them “toasts”, and that's how they're saved." }),
+    el("div", { class: "grid" },
+      fText(t, "Id", "Name", { live: true, mono: true, hint: "How quests refer to this message. Lowercase-with-hyphens is easiest to keep straight." }),
+      fSelect(t, "Type", "Kind of message", [{ value: "Text", label: "Two short lines" }, { value: "Paragraph", label: "A longer paragraph" }, { value: "Image", label: "A picture" }], { live: true, hint: "Decides which settings below apply." })
+    )
+  ));
+
+  const type = t.Type || "Text";
+  if (type === "Text") {
+    host.appendChild(section("Message text", "Type %questname anywhere and it becomes the quest's name",
+      el("div", { class: "grid two" },
+        fText(t, "Text Line 1", "First line", { live: true, hint: "Usually the heading, e.g. Quest Started." }),
+        fText(t, "Text Line 2", "Second line", { live: true, hint: "Usually %questname." })
+      ),
+      el("div", { class: "grid two" },
+        fSelect(t, "Text Line 1 Alignment", "First line position", ["left", "center", "right"], { live: true }),
+        fSelect(t, "Text Line 2 Alignment", "Second line position", ["left", "center", "right"], { live: true })
+      ),
+      el("div", { class: "divider" }),
+      el("div", { class: "grid two" },
+        fColorSwatch(t, "Text Line 1 Color", "First line colour", null, refreshPreview),
+        fColorSwatch(t, "Text Line 2 Color", "Second line colour", null, refreshPreview)
+      ),
+      el("div", { class: "divider" }),
+      fSelect(t, "Background Style", "Message background",
+        [{ value: "Window", label: "Window frame" }, { value: "Dim", label: "Dimmed panel" }, { value: "Transparent", label: "No background" }],
+        { live: true })
+    ));
+  } else if (type === "Paragraph") {
+    host.appendChild(section("Paragraph", "The window grows to fit the text",
+      fText(t, "Header Line", "Header line", { wide: true }),
+      fArea(t, "Paragraph", "Paragraph"),
+      el("div", { class: "grid" },
+        fSelect(t, "Paragraph Alignment", "Alignment", ["left", "center", "right"]),
+        fBool(t, "Header Dividers", "Header divider lines"),
+        fNum(t, "Header Divider Color 1", "Divider colour 1"),
+        fNum(t, "Header Divider Color 2", "Divider colour 2")
+      )
+    ));
+  } else {
+    host.appendChild(section("Image", "336×72 px at default width",
+      fText(t, "Image", "Image path", { mono: true, wide: true, hint: "Relative to img/, any subfolder." }),
+      fBool(t, "Show Background", "Draw the window frame behind it")
+    ));
+  }
+
+  const se = readStruct(t["Sound Effect"]) || { Name: "", Volume: "90", Pitch: "100", Pan: "0" };
+  const seName = el("input", {
+    type: "text", class: "mono", value: se.Name || "", placeholder: "e.g. Item3 — blank for silence",
+    oninput: (e) => { se.Name = e.target.value; t["Sound Effect"] = writeStruct(se); touch(false); }
+  });
+  const seVol = el("input", {
+    type: "number", min: 0, max: 100, value: se.Volume || "90",
+    oninput: (e) => { se.Volume = String(e.target.value); t["Sound Effect"] = writeStruct(se); touch(false); }
+  });
+  host.appendChild(section("Sound & size", "Leave sizes at 0 to use the plugin's defaults",
+    el("div", { class: "grid" },
+      field("Sound effect", "File name from audio/se, no extension.", seName),
+      field("Volume", null, seVol),
+      fNum(t, "Display Time", "How long it stays", { hint: "In frames — 60 = 1 second. 0 uses the default, about 4 seconds." }),
+      fNum(t, "Width", "Width", { hint: "In pixels. 0 uses the default (360)." }),
+      fNum(t, "Height", "Height", { hint: "Counted in lines of text. 0 uses the default (2)." })
+    ),
+    fArea(t, "Note", "Note to self", { hint: "Ignored by the game." })
+  ));
+
+  host.appendChild(section("Preview", "How it will look in game", popupPreview(t)));
+
+  const uses = toastUsage(t.Id);
+  host.appendChild(section("Used by", uses.length ? uses.length + "" : "not used yet",
+    uses.length
+      ? el("div", { class: "stack" }, uses.map((u) => el("div", { class: "chip", style: "padding:5px 9px;font-size:12px", text: u })))
+      : el("div", { class: "empty", text: "No quest shows this message yet. Pick it in a quest's Pop-up messages section." })
+  ));
+
+  host.appendChild(el("button", {
+    class: "btn danger", type: "button", onclick: () => {
+      if (uses.length && !confirm("Delete \"" + t.Id + "\"? " + uses.length + " quest setting(s) use it, and those notices would stop appearing.")) return;
+      S.toasts.splice(S.tSel, 1);
+      S.tSel = Math.max(0, S.tSel - 1);
+      touch(true); renderDetail();
+    }
+  }, "Delete pop-up"));
+}
+
+/* ===========================================================
+   Validation
+   =========================================================== */
+function validate() {
+  const out = [];
+  const add = (sev, title, detail) => out.push({ sev: sev, title: title, detail: detail });
+
+  const seen = new Map();
+  for (const q of S.quests) {
+    const nm = q.Name || "";
+    if (!nm.trim()) add("e", "A quest has no name", "Every quest needs a unique name — it's the id events use.");
+    seen.set(nm, (seen.get(nm) || 0) + 1);
+  }
+  for (const [nm, n] of seen) {
+    if (n > 1 && nm.trim()) add("e", "Duplicate quest name: " + nm, "Quest names must be unique — plugin commands can only find one of them.");
+  }
+
+  for (const q of S.quests) {
+    const label = q.Name || "(unnamed)";
+    const objs = readStructArray(q.Objectives);
+    if (!objs.length) add("w", "No objectives: " + label, "A stage with no objectives is treated as finished, so this quest completes as soon as it starts.");
+    const ids = new Set();
+    for (const o of objs) {
+      if (!o.id || !String(o.id).trim()) add("e", "Blank objective id in " + label, "Objectives need a non-blank id or they can't be targeted by Set Objective Progress.");
+      else if (ids.has(o.id)) add("e", "Duplicate objective id '" + o.id + "' in " + label, "Ids must be unique within a quest.");
+      else ids.add(o.id);
+    }
+    if (q.Category && !S.categories.some((c) => c.Name === q.Category)) {
+      add("e", "Missing category: " + label, "Points at category <code>" + escapeHtml(q.Category) + "</code>, which doesn't exist. The quest may not appear in the log.");
+    }
+    for (const k of ["Discover Toast", "Start Toast", "Complete Toast", "Fail Toast", "Objective Complete Toast"]) {
+      const v = q[k];
+      if (v && !S.toasts.some((t) => t.Id === v)) {
+        add("e", "Missing pop-up message: " + label, "<code>" + escapeHtml(k) + "</code> points at <code>" + escapeHtml(v) + "</code>, which no longer exists. Nothing will appear in game, and RPG Maker won't warn you.");
+      }
+    }
+  }
+
+  const tseen = new Map();
+  for (const t of S.toasts) {
+    if (!t.Id || !t.Id.trim()) add("e", "A pop-up message has no name", "Without a name, no quest can point at it.");
+    tseen.set(t.Id, (tseen.get(t.Id) || 0) + 1);
+  }
+  for (const [id, n] of tseen) if (n > 1 && id) add("e", "Two pop-up messages share the name: " + id, "Only one of them can ever be found.");
+
+  if (S.scanned) {
+    const names = new Set(S.quests.map((q) => q.Name));
+    const bad = new Map();
+    for (const r of S.eventRefs) {
+      if (!names.has(r.quest)) {
+        if (!bad.has(r.quest)) bad.set(r.quest, []);
+        bad.get(r.quest).push(r.where);
+      }
+    }
+    for (const [qn, wheres] of bad) {
+      add("e", "An event calls a quest that doesn't exist: " + qn,
+        "Used in " + wheres.slice(0, 4).map((w) => "<code>" + escapeHtml(w) + "</code>").join(", ") +
+        (wheres.length > 4 ? " and " + (wheres.length - 4) + " more" : "") +
+        ". The plugin command will silently do nothing. Usually means the quest was renamed after the event was written.");
+    }
+    for (const q of S.quests) {
+      if (q.Name && questReferences(q.Name).total === 0) {
+        add("w", "Never started by any event: " + q.Name, "No event or script references this quest, so nothing can start it during play. It's also the only state in which it can be deleted.");
+      }
+    }
+  }
+  return out;
+}
+
+function renderCheck() {
+  const host = $("#check-body"); host.textContent = "";
+  const issues = validate();
+  const errs = issues.filter((i) => i.sev === "e").length;
+
+  host.appendChild(el("div", { style: "margin-bottom:16px" },
+    el("h2", { style: "margin:0 0 4px;font-size:20px;letter-spacing:-.02em", text: "Consistency check" }),
+    el("p", { style: "margin:0;color:var(--ink-2);font-size:13.5px", text:
+      S.scanned
+        ? "Quests, categories, pop-up messages, and every event in the project that calls the quest system."
+        : "Quests, categories and pop-up messages. Open the project as a folder to also scan events." })
+  ));
+
+  if (!issues.length) {
+    host.appendChild(el("div", { class: "allclear" },
+      el("div", { class: "big", text: "Everything checks out" }),
+      el("div", { text: "No broken references, duplicate names or blank ids." })
+    ));
+    return;
+  }
+  for (const i of issues) {
+    host.appendChild(el("div", { class: "issue " + i.sev },
+      el("div", { class: "ic", text: i.sev === "e" ? "!" : "?" }),
+      el("div", { class: "body" },
+        el("div", { class: "t", text: i.title }),
+        el("div", { class: "d", html: i.detail })
+      )
+    ));
+  }
+}
+/* ===========================================================
+   App shell
+   =========================================================== */
+function renderList() {
+  if (S.tab === "quests") renderQuestList();
+  else if (S.tab === "cats") renderCatList();
+  else if (S.tab === "toasts") renderToastList();
+  updateCounts();
+}
+function renderDetail() {
+  PREVIEW_REFRESH = null;   // drop the hook from the pane we're replacing
+  if (S.tab === "quests") renderQuestDetail();
+  else if (S.tab === "cats") renderCatDetail();
+  else if (S.tab === "toasts") renderToastDetail();
+  else if (S.tab === "check") renderCheck();
+}
+function updateCounts() {
+  $("#c-quests").textContent = S.quests.length;
+  $("#c-cats").textContent = S.categories.length;
+  $("#c-toasts").textContent = S.toasts.length;
+  const issues = validate();
+  const errs = issues.filter((i) => i.sev === "e").length;
+  const c = $("#c-check");
+  c.textContent = issues.length;
+  c.className = "count" + (errs ? " err" : "");
+}
+function setTab(name) {
+  S.tab = name;
+  if (name !== "quests") S.qView = "main";
+  for (const t of document.querySelectorAll(".tab")) {
+    t.setAttribute("aria-selected", String(t.dataset.tab === name));
+  }
+  for (const id of ["quests", "cats", "toasts", "check"]) {
+    $("#screen-" + id).classList.toggle("on", id === name);
+  }
+  renderList(); renderDetail();
+}
+
+function showModeNote(msg) {
+  const n = $("#modenote");
+  n.hidden = false;
+  n.innerHTML = msg;
+}
+
+function enterEditor(label) {
+  $("#screen-connect").classList.remove("on");
+  $("#tabs").hidden = false;
+  $("#btn-save").hidden = false;
+  $("#btn-reload").hidden = S.mode !== "fs";
+  $("#projchip").hidden = false;
+  $("#projpath").textContent = label;
+  const badge = $("#modebadge");
+  badge.hidden = false;
+  if (S.mode === "fs") { badge.textContent = "Saves directly"; badge.className = "badge ok"; }
+  else { badge.textContent = "Download mode"; badge.className = "badge warn"; }
+  setDirty(false);
+  setTab("quests");
+}
+
+/* ===========================================================
+   Credits — where these plugins come from
+   =========================================================== */
+const CGMZ_SITE = "https://www.caspergaming.com/";
+const CGMZ_PLUGINS = [
+  { name: "CGMZ_Core", title: "CGMZ Core",
+    url: "https://www.caspergaming.com/plugins/cgmz/core/",
+    desc: "The shared foundation. Both plugins below need it, and it must sit above them in the Plugin Manager." },
+  { name: "CGMZ_QuestSystem", title: "CGMZ Quest System",
+    url: "https://www.caspergaming.com/plugins/cgmz/questsystem/",
+    desc: "Quests, stages, objectives, rewards, the quest log and the on-map tracker — everything on the Quests tab." },
+  { name: "CGMZ_ToastManager", title: "CGMZ Toast Manager",
+    url: "https://www.caspergaming.com/plugins/cgmz/toastmanager/",
+    desc: "The brief notices this editor calls pop-ups. Casper Gaming's own docs call them toasts." },
+  { name: "CGMZ_MenuCommandWindow", title: "CGMZ Menu Command Window",
+    url: "https://www.caspergaming.com/plugins/cgmz/menucommandwindow/",
+    desc: "Optional. Adds entries such as Quests to the pause menu so players can open the quest log." },
+];
+
+const BUILT_WITH = [
+  { title: "daisyUI", licence: "MIT", url: "https://daisyui.com",
+    desc: "All 35 colour themes in the Theme picker are daisyUI's built-in palettes, copied into this file. None of daisyUI's component styles are used, and nothing is downloaded while you work." },
+  { title: "IBM Plex Sans & Mono", licence: "SIL OFL 1.1", url: "https://www.ibm.com/plex/",
+    desc: "The typefaces this editor is set in. Loaded from Google Fonts, with system fallbacks if you're offline." },
+];
+
+function installedBadge(name) {
+  if (!S.plugins.length) return null;
+  const p = S.plugins.find((x) => x && x.name === name);
+  if (!p) return el("span", { class: "badge", text: "not installed" });
+  return p.status
+    ? el("span", { class: "badge ok", text: "installed" })
+    : el("span", { class: "badge warn", text: "installed, turned off" });
+}
+
+function renderCredits() {
+  const body = $("#credits-body");
+  body.textContent = "";
+  for (const p of CGMZ_PLUGINS) {
+    body.appendChild(el("div", { class: "plugrow" },
+      el("div", { class: "info" },
+        el("div", { style: "display:flex;align-items:center;gap:8px;flex-wrap:wrap" },
+          el("span", { class: "nm", text: p.title }),
+          installedBadge(p.name)
+        ),
+        el("div", { class: "ds", text: p.desc })
+      ),
+      el("a", { class: "get", href: p.url, target: "_blank", rel: "noopener noreferrer" }, "Get it →")
+    ));
+  }
+  body.appendChild(el("div", { class: "creditslinks" },
+    el("a", { href: CGMZ_SITE, target: "_blank", rel: "noopener noreferrer" }, "Casper Gaming Dev Corner"),
+    el("a", { href: "https://www.caspergaming.com/terms-of-use/", target: "_blank", rel: "noopener noreferrer" }, "Terms of use"),
+    el("a", { href: "https://www.patreon.com/CasperGamingRPGM", target: "_blank", rel: "noopener noreferrer" }, "Support the author")
+  ));
+  body.appendChild(el("p", { class: "sub-note", style: "margin-top:14px", text:
+    "Every plugin file must keep its original filename — RPG Maker uses it to find that plugin's settings and commands. " +
+    "If a plugin here is missing, download it from the Dev Corner, drop the .js into your project's js/plugins folder, " +
+    "then add and enable it in RPG Maker's Plugin Manager." }));
+
+  /* --- who made this --- */
+  body.appendChild(el("h3", { class: "mini", style: "margin:24px 0 4px", text: "This editor" }));
+  body.appendChild(el("div", { class: "plugrow" },
+    el("div", { class: "info" },
+      el("div", { style: "display:flex;align-items:center;gap:8px;flex-wrap:wrap" },
+        el("span", { class: "nm", text: "Quest Forge" }),
+        el("span", { class: "badge info", text: "built with Claude" })
+      ),
+      el("div", { class: "ds", text:
+        "Written with Claude, Anthropic's AI assistant, and maintained by sageChaozu. " +
+        "It reads and writes your project's plugins.js and nothing else." })
+    ),
+    el("a", { class: "get", href: "https://github.com/sageChaozu/", target: "_blank", rel: "noopener noreferrer" }, "GitHub →")
+  ));
+
+  /* --- what this editor itself is built on --- */
+  body.appendChild(el("h3", { class: "mini", style: "margin:24px 0 4px", text: "Built with" }));
+  for (const b of BUILT_WITH) {
+    body.appendChild(el("div", { class: "plugrow" },
+      el("div", { class: "info" },
+        el("div", { style: "display:flex;align-items:center;gap:8px;flex-wrap:wrap" },
+          el("span", { class: "nm", text: b.title }),
+          el("span", { class: "badge", text: b.licence })
+        ),
+        el("div", { class: "ds", text: b.desc })
+      ),
+      el("a", { class: "get", href: b.url, target: "_blank", rel: "noopener noreferrer" }, "Visit →")
+    ));
+  }
+}
+
+const creditsDlg = $("#credits");
+function openCredits() {
+  renderCredits();
+  if (creditsDlg.showModal) creditsDlg.showModal();
+  else creditsDlg.setAttribute("open", "");
+}
+function closeCredits() {
+  if (creditsDlg.close) creditsDlg.close();
+  else creditsDlg.removeAttribute("open");
+}
+$("#btn-credits").addEventListener("click", openCredits);
+$("#credits-close").addEventListener("click", closeCredits);
+$("#credits-done").addEventListener("click", closeCredits);
+creditsDlg.addEventListener("click", (e) => { if (e.target === creditsDlg) closeCredits(); });
+
+/* ---------- events ---------- */
+$("#btn-open").addEventListener("click", openProjectFolder);
+$("#btn-openfile").addEventListener("click", openPluginsFile);
+$("#filein").addEventListener("change", (e) => {
+  const f = e.target.files && e.target.files[0];
+  if (f) handlePluginsFile(f);
+  e.target.value = "";
+});
+$("#btn-save").addEventListener("click", save);
+$("#btn-reload").addEventListener("click", async () => {
+  if (S.dirty && !confirm("Discard your unsaved changes and reload from disk?")) return;
+  try {
+    const text = await (await S.pluginsHandle.getFile()).text();
+    ingestPlugins(parsePluginsJs(text));
+    await scanEventReferences(S.dirHandle);
+    setDirty(false);
+    setTab(S.tab);
+    flash("Reloaded from disk");
+  } catch (e) { flash(e.message, true); }
+});
+for (const t of document.querySelectorAll(".tab")) {
+  t.addEventListener("click", () => setTab(t.dataset.tab));
+}
+$("#q-search").addEventListener("input", (e) => { S.qFilter = e.target.value; renderQuestList(); });
+$("#q-add").addEventListener("click", () => {
+  let n = S.quests.length + 1, name = "New Quest " + n;
+  while (S.quests.some((q) => q.Name === name)) { n++; name = "New Quest " + n; }
+  const q = newQuest(name);
+  if (S.categories.length) q.Category = S.categories[0].Name;
+  S.quests.push(q);
+  S.qSel = S.quests.length - 1;
+  S.qView = "main";
+  S.qFilter = ""; $("#q-search").value = "";
+  touch(true); renderDetail();
+});
+$("#q-dup").addEventListener("click", () => {
+  const src = S.quests[S.qSel];
+  if (!src) return;
+  const copy = JSON.parse(JSON.stringify(src));
+  let n = 2, name = src.Name + " copy";
+  while (S.quests.some((q) => q.Name === name)) { name = src.Name + " copy " + n; n++; }
+  copy.Name = name;
+  S.quests.splice(S.qSel + 1, 0, copy);
+  S.qSel = S.qSel + 1;
+  S.qView = "main";
+  touch(true); renderDetail();
+});
+$("#cat-add").addEventListener("click", () => {
+  let n = S.categories.length + 1, name = "Category " + n;
+  while (S.categories.some((c) => c.Name === name)) { n++; name = "Category " + n; }
+  S.categories.push(newCategory(name));
+  S.catSel = S.categories.length - 1;
+  touch(true); renderDetail();
+});
+$("#t-add").addEventListener("click", () => {
+  if (S.tmIndex < 0) { flash("The pop-up plugin isn't installed in this project.", true); return; }
+  let n = S.toasts.length + 1, id = "popup-" + n;
+  while (S.toasts.some((t) => t.Id === id)) { n++; id = "popup-" + n; }
+  S.toasts.push(newToast(id));
+  S.tSel = S.toasts.length - 1;
+  touch(true); renderDetail();
+});
+
+/* delete quest via keyboard-free explicit button in the detail pane footer */
+document.addEventListener("keydown", (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
+    e.preventDefault();
+    if (!$("#btn-save").hidden) save();
+  }
+});
+
+window.addEventListener("beforeunload", (e) => {
+  if (S.dirty) { e.preventDefault(); e.returnValue = ""; }
+});
+
+/* ===========================================================
+   Theme picker — daisyUI's built-in palettes, inlined above
+   =========================================================== */
+const THEMES = ["light","dark","cupcake","bumblebee","emerald","corporate","synthwave","retro",
+  "cyberpunk","valentine","halloween","garden","forest","aqua","lofi","pastel","fantasy","wireframe",
+  "black","luxury","dracula","cmyk","autumn","business","acid","lemonade","night","coffee","winter",
+  "dim","nord","sunset","caramellatte","abyss","silk"];
+const THEME_KEY = "questforge-theme";
+
+function currentTheme() { return document.documentElement.getAttribute("data-theme"); }
+function applyTheme(name) {
+  if (name) document.documentElement.setAttribute("data-theme", name);
+  else document.documentElement.removeAttribute("data-theme");
+  try { name ? localStorage.setItem(THEME_KEY, name) : localStorage.removeItem(THEME_KEY); } catch (e) { }
+  markThemeCards();
+  refreshPreview();   // canvases pick up theme-dependent chrome
+}
+function markThemeCards() {
+  const cur = currentTheme();
+  for (const b of document.querySelectorAll(".themecard")) {
+    b.setAttribute("aria-pressed", String((b.dataset.themeName || "") === (cur || "")));
+  }
+  const btn = $("#btn-theme");
+  if (btn) {
+    const label = cur ? "Theme: " + cur.charAt(0).toUpperCase() + cur.slice(1) : "Theme: follows your system";
+    btn.title = label;
+    btn.setAttribute("aria-label", label);
+  }
+}
+
+(function initTheme() {
+  let saved = null;
+  try { saved = localStorage.getItem(THEME_KEY); } catch (e) { }
+  if (saved && THEMES.includes(saved)) document.documentElement.setAttribute("data-theme", saved);
+})();
+
+function buildThemeGrid() {
+  const grid = $("#themegrid");
+  if (grid.children.length) { markThemeCards(); return; }
+  const sys = el("button", { class: "themecard themesys", type: "button", "aria-pressed": "false",
+    onclick: () => applyTheme(null) },
+    el("span", { class: "tname", text: "Follow my system" }),
+    el("span", { class: "tsub", text: "Light or dark, whichever your computer is set to" })
+  );
+  sys.dataset.themeName = "";
+  grid.appendChild(sys);
+  for (const name of THEMES) {
+    const card = el("button", { class: "themecard", type: "button", "aria-pressed": "false",
+      "data-theme": name, onclick: () => applyTheme(name) },
+      el("span", { class: "tname", text: name }),
+      el("span", { class: "tchips" },
+        el("i", { style: "background:var(--color-primary)" }),
+        el("i", { style: "background:var(--color-secondary)" }),
+        el("i", { style: "background:var(--color-accent)" }),
+        el("i", { style: "background:var(--color-neutral)" })
+      )
+    );
+    card.dataset.themeName = name;
+    grid.appendChild(card);
+  }
+  markThemeCards();
+}
+
+const themeDlg = $("#themedlg");
+$("#btn-theme").addEventListener("click", () => {
+  buildThemeGrid();
+  if (themeDlg.showModal) themeDlg.showModal(); else themeDlg.setAttribute("open", "");
+});
+const closeTheme = () => { if (themeDlg.close) themeDlg.close(); else themeDlg.removeAttribute("open"); };
+$("#theme-close").addEventListener("click", closeTheme);
+$("#theme-done").addEventListener("click", closeTheme);
+themeDlg.addEventListener("click", (e) => { if (e.target === themeDlg) closeTheme(); });
+markThemeCards();
+
+/* capability note on the connect screen */
+if (!window.showDirectoryPicker) {
+  showModeNote("<b>This browser can't open folders.</b> Chrome or Edge supports direct saving. " +
+    "In other browsers, load a <span class='mono'>plugins.js</span> file and save by download instead.");
+} else if (location.protocol === "file:") {
+  showModeNote("<b>Opened straight from disk.</b> Folder access may be blocked on <span class='mono'>file://</span>. " +
+    "If the picker refuses, serve this folder over <span class='mono'>http://localhost</span> and reload — " +
+    "or use the <span class='mono'>plugins.js</span> fallback, which always works.");
+}
+
+</script>
+</body>
+</html>
