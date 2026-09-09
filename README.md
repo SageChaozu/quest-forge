@@ -20,31 +20,22 @@ Quest Forge flattens all of that into one screen, and makes the failure modes vi
 
 ## Quick start
 
-Download or clone the repo, then pick one of two modes.
+1. Download **`quest-forge.html`**.
+2. **Double-click it.** It opens in your browser — no server, no install, no build step.
+3. Click **Choose project folder** and pick the folder containing your project's `js/`, `data/` and `index.html`.
+4. Edit, then hit **Save to project**.
 
-### Direct save (recommended)
+That's it. Quest Forge reads and writes `js/plugins.js` in place, and reads your maps and game art straight from the folder you picked.
 
-Serve the folder and open it over `http://localhost` — browsers only grant folder access on a local server, not on `file://`.
+Needs **Chrome or Edge** — they're the browsers that implement the folder-access API.
 
-```bash
-npx --yes http-server -p 8123 -c-1 .
-```
+<details>
+<summary>Using Firefox or Safari?</summary>
 
-Or with Python:
+They don't support folder access yet, so Quest Forge falls back to a manual mode: click **Load a plugins.js file instead**, edit as normal, and **Save** downloads a new `plugins.js` to copy back into your project's `js/` folder.
 
-```bash
-python -m http.server 8123
-```
-
-Then open <http://localhost:8123/quest-forge.html> and click **Choose project folder** — pick the folder containing your project's `js/`, `data/` and `index.html`.
-
-Quest Forge reads and writes `js/plugins.js` in place. Requires **Chrome or Edge** (File System Access API).
-
-### Fallback (any browser)
-
-Double-click `quest-forge.html`, then click **Load a plugins.js file instead**. You edit normally and **Save** downloads a new `plugins.js` to copy back into your project's `js/` folder.
-
-In this mode Quest Forge can't read your maps, so event scanning, quest deletion and the game-art previews are unavailable. The header always tells you which mode you're in.
+In that mode it can't read your maps or game art, so event scanning, quest deletion and the previews are unavailable. The header always tells you which mode you're in.
+</details>
 
 ---
 
@@ -139,7 +130,7 @@ Your data never leaves your machine. Quest Forge has no server, no analytics and
 
 ## Troubleshooting
 
-**The folder picker doesn't appear, or is refused.** You've probably opened the file directly from disk. Serve it over `http://localhost` as shown above, or use the fallback mode.
+**There's no "Choose project folder" button.** You're in a browser without folder-access support — Firefox and Safari don't have it yet. Use Chrome or Edge, or fall back to loading `plugins.js` manually.
 
 **Changes don't show up in game.** Reopen the project in RPG Maker after saving so it reloads `plugins.js`, and test quest changes on a new save — CGMZ Quest System only partially supports adding quests to existing saves.
 

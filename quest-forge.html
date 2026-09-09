@@ -864,7 +864,7 @@ async function openProjectFolder() {
   } catch (e) {
     if (e && e.name === "AbortError") return;
     showModeNote("Folder access was refused: " + e.message +
-      " If you opened this file directly from disk, serve it over http://localhost instead, or use the plugins.js fallback below.");
+      " Try again, or use the plugins.js fallback below.");
     return;
   }
   try {
@@ -1373,7 +1373,7 @@ function renderDeleteQuest(q) {
   if (!S.scanned) {
     note.innerHTML = "<b>Can't confirm this quest is unused.</b> " +
       "The project's events haven't been scanned, so deleting could silently break a plugin command. " +
-      "Reopen with <b>Choose project folder</b> (Chrome or Edge, served over http://localhost) and the check will run automatically.";
+      "Reopen with <b>Choose project folder</b> in Chrome or Edge and the check will run automatically.";
   } else {
     const bits = [];
     if (refs.events.length) bits.push(refs.events.length + " event command" + (refs.events.length > 1 ? "s" : ""));
@@ -3039,10 +3039,6 @@ markThemeCards();
 if (!window.showDirectoryPicker) {
   showModeNote("<b>This browser can't open folders.</b> Chrome or Edge supports direct saving. " +
     "In other browsers, load a <span class='mono'>plugins.js</span> file and save by download instead.");
-} else if (location.protocol === "file:") {
-  showModeNote("<b>Opened straight from disk.</b> Folder access may be blocked on <span class='mono'>file://</span>. " +
-    "If the picker refuses, serve this folder over <span class='mono'>http://localhost</span> and reload — " +
-    "or use the <span class='mono'>plugins.js</span> fallback, which always works.");
 }
 
 </script>
